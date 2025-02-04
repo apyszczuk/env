@@ -4,3 +4,6 @@
 [submodule "pack/vim-asyncrun/start/vim-asyncrun"]
 	path = pack/vim-asyncrun/start/vim-asyncrun
 	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "pack/vim-ctrlp/start/vim-ctrlp"]
+	path = pack/vim-ctrlp/start/vim-ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
