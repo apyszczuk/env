@@ -22,3 +22,6 @@
 [submodule "pack/vim-nerdtree-git/start/vim-nerdtree-git"]
 	path = pack/vim-nerdtree-git/start/vim-nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "pack/vim-winmover/start/vim-winmover"]
+	path = pack/vim-winmover/start/vim-winmover
+	url = https://github.com/apyszczuk/vim-winmover.git
