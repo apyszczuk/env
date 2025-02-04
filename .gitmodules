@@ -7,3 +7,6 @@
 [submodule "pack/vim-ctrlp/start/vim-ctrlp"]
 	path = pack/vim-ctrlp/start/vim-ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "pack/vim-cool/start/vim-cool"]
+	path = pack/vim-cool/start/vim-cool
+	url = https://github.com/romainl/vim-cool.git
