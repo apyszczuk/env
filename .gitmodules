@@ -10,3 +10,6 @@
 [submodule "pack/vim-cool/start/vim-cool"]
 	path = pack/vim-cool/start/vim-cool
 	url = https://github.com/romainl/vim-cool.git
+[submodule "pack/vim-delimitmate/start/vim-delimitmate"]
+	path = pack/vim-delimitmate/start/vim-delimitmate
+	url = https://github.com/Raimondi/delimitMate.git
