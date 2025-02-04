@@ -16,3 +16,6 @@
 [submodule "pack/vim-nerdtree/start/vim-nerdtree"]
 	path = pack/vim-nerdtree/start/vim-nerdtree
 	url = https://github.com/preservim/nerdtree.git
+[submodule "pack/vim-gitgutter/start/vim-gitgutter"]
+	path = pack/vim-gitgutter/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
