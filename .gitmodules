@@ -31,3 +31,6 @@
 [submodule "pack/vim-differ/start/vim-differ"]
 	path = pack/vim-differ/start/vim-differ
 	url = https://github.com/apyszczuk/vim-differ.git
+[submodule "pack/vim-proset/start/vim-proset"]
+	path = pack/vim-proset/start/vim-proset
+	url = https://github.com/apyszczuk/vim-proset.git
