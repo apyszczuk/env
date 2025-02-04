@@ -28,3 +28,6 @@
 [submodule "pack/vim-fstline/start/vim-fstline"]
 	path = pack/vim-fstline/start/vim-fstline
 	url = https://github.com/apyszczuk/vim-fstline.git
+[submodule "pack/vim-differ/start/vim-differ"]
+	path = pack/vim-differ/start/vim-differ
+	url = https://github.com/apyszczuk/vim-differ.git
