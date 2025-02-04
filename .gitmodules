@@ -13,3 +13,6 @@
 [submodule "pack/vim-delimitmate/start/vim-delimitmate"]
 	path = pack/vim-delimitmate/start/vim-delimitmate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "pack/vim-nerdtree/start/vim-nerdtree"]
+	path = pack/vim-nerdtree/start/vim-nerdtree
+	url = https://github.com/preservim/nerdtree.git
