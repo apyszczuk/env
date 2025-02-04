@@ -25,3 +25,6 @@
 [submodule "pack/vim-winmover/start/vim-winmover"]
 	path = pack/vim-winmover/start/vim-winmover
 	url = https://github.com/apyszczuk/vim-winmover.git
+[submodule "pack/vim-fstline/start/vim-fstline"]
+	path = pack/vim-fstline/start/vim-fstline
+	url = https://github.com/apyszczuk/vim-fstline.git
