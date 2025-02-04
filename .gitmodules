@@ -34,3 +34,6 @@
 [submodule "pack/vim-proset/start/vim-proset"]
 	path = pack/vim-proset/start/vim-proset
 	url = https://github.com/apyszczuk/vim-proset.git
+[submodule "pack/vim-tagbar/start/vim-tagbar"]
+	path = pack/vim-tagbar/start/vim-tagbar
+	url = https://github.com/preservim/tagbar.git
