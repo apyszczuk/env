@@ -37,3 +37,6 @@
 [submodule "pack/vim-tagbar/start/vim-tagbar"]
 	path = pack/vim-tagbar/start/vim-tagbar
 	url = https://github.com/preservim/tagbar.git
+[submodule "pack/vim-grepl/start/vim-grepl"]
+	path = pack/vim-grepl/start/vim-grepl
+	url = https://github.com/apyszczuk/vim-grepl.git
