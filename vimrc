@@ -149,52 +149,25 @@ nnoremap <C-J> 10j
 nnoremap <C-K> 10k
 
 
-" Remove line and don't update register
+" remove line and don't update register
 nnoremap dD "_dd
 
+
+" quickfix window and location list
+nnoremap <silent> <C-F>             :lnext<CR>
+nnoremap <silent> <C-B>             :lprev<CR>
+nnoremap <silent> m<C-F>            :lfirst<CR>
+nnoremap <silent> m<C-B>            :llast<CR>
+
+nnoremap <silent> <C-L><C-F>        :cnext<CR>
+nnoremap <silent> <C-L><C-B>        :cprev<CR>
+nnoremap <silent> m<C-L><C-F>       :cfirst<CR>
+nnoremap <silent> m<C-L><C-B>       :clast<CR>
 
 
 " ---- COMMANDS --------------------------------------------------------------------------
 
 command! -nargs=1 -complete=help H :enew | :set buftype=help | :keepalt h <args>
-
-
-
-
-
-
-
-
-
-
-" MAKE THIS CLEAN, MAYBE SOMEWHERE ELSE
-" defaults
-nnoremap <silent> <C-F>      :cnext<CR>
-nnoremap <silent> <C-B>      :cprev<CR>
-nnoremap <silent> m<C-F>     :cfirst<CR>
-nnoremap <silent> m<C-B>     :clast<CR>
-
-let s:qf_ll_mappings_state = 0
-function s:switch_qf_ll_mappings()
-    if s:qf_ll_mappings_state == 0
-        nnoremap <silent> <C-F>      :lnext<CR>
-        nnoremap <silent> <C-B>      :lprev<CR>
-        nnoremap <silent> m<C-F>     :lfirst<CR>
-        nnoremap <silent> m<C-B>     :llast<CR>
-        let s:qf_ll_mappings_state = 1
-        echo "set mappings for location list"
-    else
-        nnoremap <silent> <C-F>      :cnext<CR>
-        nnoremap <silent> <C-B>      :cprev<CR>
-        nnoremap <silent> m<C-F>     :cfirst<CR>
-        nnoremap <silent> m<C-B>     :clast<CR>
-        let s:qf_ll_mappings_state = 0
-        echo "set mappings for quickfix window"
-    endif
-endfunction
-
-nnoremap <silent> mqf :call <SID>switch_qf_ll_mappings()<CR>
-
 
 
 " ---- PLUGINS ---------------------------------------------------------------------------
