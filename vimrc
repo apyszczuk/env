@@ -238,24 +238,14 @@ let g:ctrlp_prompt_mappings         =
 \   'PrtCurLeft()':     ['<c-b>'],
 \ }
 
-function! s:get_selected_text()
-    return getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]-1]
-endfunction
-
-" change it to take from visually selected text
-function! s:find_selected_tags(cmd, mode)
+function! s:find_selected_tag(cmd)
     try
-        let default_input_save = get(g:, 'ctrlp_default_input', '')
-        if a:mode == "visual"
-            let g:ctrlp_default_input = s:get_selected_text()
-        elseif a:mode == "normal"
-            let g:ctrlp_default_input = expand("<cword>")
-        endif
-
-        execute '' . a:cmd
+        let default_input           = get(g:, "ctrlp_default_input", "")
+        let g:ctrlp_default_input   = getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]-1]
+        execute a:cmd
     finally
-        if exists('default_input_save')
-            let g:ctrlp_default_input = default_input_save
+        if exists("default_input")
+            let g:ctrlp_default_input = default_input
         endif
     endtry
 endfunction
@@ -263,8 +253,8 @@ endfunction
 nnoremap <silent> mi :CtrlPBuffer<CR>
 nnoremap <silent> mP :CtrlPBufTag<CR>
 nnoremap <silent> mp :CtrlPTag<CR>
-xnoremap <silent> mP :<c-u>call <SID>find_selected_tags("CtrlPBufTag", "visual")<CR>
-xnoremap <silent> mp :<c-u>call <SID>find_selected_tags("CtrlPTag", "visual")<CR>
+xnoremap <silent> mP :<c-u>call <SID>find_selected_tag("CtrlPBufTag")<CR>
+xnoremap <silent> mp :<c-u>call <SID>find_selected_tag("CtrlPTag")<CR>
 
 
 
