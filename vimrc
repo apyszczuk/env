@@ -78,10 +78,11 @@ set backspace+=indent,eol,start
 set noesckeys
 
 " timeouts
-set updatetime=100
+set nottimeout
 set timeout
 set timeoutlen=1000
 set ttimeoutlen=100
+set updatetime=100
 
 " fold
 set foldmethod=syntax
