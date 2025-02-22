@@ -2,11 +2,11 @@ autocmd VimEnter * :clearjumps
 
 
 " ---- COMMAND ALIASES -------------------------------------------------------------------
-command W   w
-command Wa  wa
-command Wq  wq
-command Q   q
-command Qa  qa
+command W       w
+command Wa      wa
+command Wq      wq
+command Q       q
+command Qa      qa
 
 
 " ---- BUILT-IN EXTENSIONS ---------------------------------------------------------------
@@ -15,12 +15,13 @@ runtime ftplugin/man.vim
 
 
 " ---- COMMAND MODE INPUT ----------------------------------------------------------------
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-cnoremap <C-B> <Left>
-cnoremap <C-F> <Right>
-cnoremap <Esc>b <S-Left>
-cnoremap <Esc>f <S-Right>
+cnoremap <C-A>      <Home>
+cnoremap <C-E>      <End>
+cnoremap <C-B>      <Left>
+cnoremap <C-F>      <Right>
+cnoremap <Esc>b     <S-Left>
+cnoremap <Esc>f     <S-Right>
+
 set cedit=^O
 
 
@@ -28,10 +29,8 @@ set cedit=^O
 syntax on
 filetype plugin indent on
 
-
 " command history size
 set history=1000
-
 
 " look
 set number
@@ -43,7 +42,6 @@ set scrolloff=1
 set shortmess=filnxtToOSs
 set cmdwinheight=40
 
-
 " indent
 set tabstop=4
 set shiftwidth=4
@@ -53,18 +51,15 @@ set autoindent
 set cindent
 set cinoptions=g0
 
-
 " search
 set hlsearch
 set incsearch
 
-
 " swap file
 set noswapfile
 
-
+" autoread file
 set autoread
-
 
 " split
 set splitbelow
@@ -72,19 +67,15 @@ set splitright
 set splitkeep=screen
 set equalalways
 
-
 " jumps
 set jumpoptions=stack
-
 
 " buffers
 set hidden
 
-
 " input
 set backspace+=indent,eol,start
 set noesckeys
-
 
 " timeouts
 set updatetime=100
@@ -92,16 +83,13 @@ set timeout
 set timeoutlen=1000
 set ttimeoutlen=100
 
-
 " fold
 set foldmethod=syntax
 set foldlevelstart=100
 
-
 " it should be in cxx-cmake implemented and configured via settings.json
 " yet for now stays
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
-
 
 
 " ---- MAPPINGS --------------------------------------------------------------------------
@@ -110,30 +98,21 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 " it could execute multiple lines that are added to the list
 nnoremap <C-L>rc 0v$hy:<C-R>"<CR>
 
-
-" quickfix window
-nnoremap <silent> mc :ccl<CR>
-
-
 " jumps
 nnoremap <C-]> <C-]>zz
 nnoremap <C-O> <C-O>zz
 nnoremap <C-I> <C-I>zz
-
 
 " command window with immediate backward search
 nnoremap q: q:<ESC>?
 nnoremap q/ q/<ESC>?
 nnoremap q? q?<ESC>?
 
-
 " find but no jump
 nnoremap <silent> *     :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
 nnoremap <silent> g*    :let @/=expand('<cword>') <bar> set hls <cr>
-
 vnoremap <silent> *     y:let @/= '\<' . "<C-R>"" . '\>'<CR> :set hls<CR>
 vnoremap <silent> g*    y:let @/="<C-R>""<CR> :set hls<CR>
-
 
 " replace
 nnoremap <C-L><C-S>     :%s/\<<C-R><C-W>\>/
@@ -141,26 +120,25 @@ nnoremap g<C-L><C-S>    :%s/<C-R><C-W>/
 vnoremap <C-L><C-S>     y:%s/\<<C-R>"\>/
 vnoremap g<C-L><C-S>    y:%s/<C-R>"/
 
-
 " go quicker
 nnoremap <C-J> 10j
 nnoremap <C-K> 10k
 
-
 " remove line and don't update register
 nnoremap dD "_dd
 
+" quickfix window
+nnoremap <silent> mc            :ccl<CR>
+nnoremap <silent> <C-F>         :lnext<CR>
+nnoremap <silent> <C-B>         :lprev<CR>
+nnoremap <silent> m<C-F>        :lfirst<CR>
+nnoremap <silent> m<C-B>        :llast<CR>
 
-" quickfix window and location list
-nnoremap <silent> <C-F>             :lnext<CR>
-nnoremap <silent> <C-B>             :lprev<CR>
-nnoremap <silent> m<C-F>            :lfirst<CR>
-nnoremap <silent> m<C-B>            :llast<CR>
-
-nnoremap <silent> <C-L><C-F>        :cnext<CR>
-nnoremap <silent> <C-L><C-B>        :cprev<CR>
-nnoremap <silent> m<C-L><C-F>       :cfirst<CR>
-nnoremap <silent> m<C-L><C-B>       :clast<CR>
+" location list
+nnoremap <silent> <C-L><C-F>    :cnext<CR>
+nnoremap <silent> <C-L><C-B>    :cprev<CR>
+nnoremap <silent> m<C-L><C-F>   :cfirst<CR>
+nnoremap <silent> m<C-L><C-B>   :clast<CR>
 
 
 " ---- COMMANDS --------------------------------------------------------------------------
@@ -248,13 +226,11 @@ function! s:find_selected_tag(cmd)
     endtry
 endfunction
 
-nnoremap <silent> mi :CtrlPBuffer<CR>
-nnoremap <silent> mP :CtrlPBufTag<CR>
-nnoremap <silent> mp :CtrlPTag<CR>
-xnoremap <silent> mP :<c-u>call <SID>find_selected_tag("CtrlPBufTag")<CR>
-xnoremap <silent> mp :<c-u>call <SID>find_selected_tag("CtrlPTag")<CR>
-
-
+nnoremap <silent> mi    :CtrlPBuffer<CR>
+nnoremap <silent> mP    :CtrlPBufTag<CR>
+nnoremap <silent> mp    :CtrlPTag<CR>
+xnoremap <silent> mP    :<c-u>call <SID>find_selected_tag("CtrlPBufTag")<CR>
+xnoremap <silent> mp    :<c-u>call <SID>find_selected_tag("CtrlPTag")<CR>
 
 
 " ---- COLORS ----------------------------------------------------------------------------
