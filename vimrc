@@ -113,8 +113,6 @@ nnoremap <C-L>rc 0v$hy:<C-R>"<CR>
 
 " quickfix window
 nnoremap <silent> mc :ccl<CR>
-nnoremap mqn :cnext<CR>
-nnoremap mqp :cprev<CR>
 
 
 " jumps
