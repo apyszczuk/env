@@ -21,7 +21,7 @@ cnoremap <C-B> <Left>
 cnoremap <C-F> <Right>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
-execute "set cedit=\<C-O>"
+set cedit=^O
 
 
 " ---- OPTIONS ---------------------------------------------------------------------------
