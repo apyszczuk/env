@@ -1,0 +1,10 @@
+[options]
+allow_bold              = false
+font                    = Monospace 12.5
+mouse_autohide          = true
+scrollback_lines        = 10000
+
+[colors]
+background              = rgba(0, 0, 0, 0.00)
+foreground              = rgba(170, 170, 170, 1.0)
+cursor                  = rgba(111, 78, 55, 1.0)
