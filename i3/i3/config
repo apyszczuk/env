@@ -105,13 +105,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Control+l exec --no-startup-id i3lock -n -i ~/wallpapers/lock-wallpaper.png
 
 # volume increase
-bindsym $mod+Shift+p exec --no-startup-id "volume_increase 3"
+bindsym $mod+Shift+p exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
 
 # volume decrease
-bindsym $mod+Shift+o exec --no-startup-id "volume_decrease 3"
+bindsym $mod+Shift+o exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
 
 # volume toggle
-bindsym $mod+Shift+i exec --no-startup-id "volume_toggle"
+bindsym $mod+Shift+i exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
 
 # define resize mode
 mode "resize" {
