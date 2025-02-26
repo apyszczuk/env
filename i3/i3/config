@@ -1,0 +1,225 @@
+# i3 config file (v4)
+
+# modifier
+set $mod Mod1
+
+# workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# font
+font pango:DejaVu Sans Mono 12
+
+# floating window modifier
+floating_modifier $mod
+
+# open terminal
+bindsym $mod+m exec termite
+
+# kill window
+bindsym $mod+Shift+q kill
+
+# start launcher
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+
+# focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# horizontal split
+bindsym $mod+semicolon split h
+
+# vertical split 
+bindsym $mod+v split v
+
+# fullscreen 
+bindsym $mod+Shift+f fullscreen toggle
+
+# container layout
+bindsym $mod+e layout toggle split
+
+# tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# tiling / floating focus
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+o focus child
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# switch to workspace: next and previous
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2 workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3 workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4 workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5 workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6 workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7 workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# lock screen
+# bindsym $mod+Control+l exec --no-startup-id "~/.config/i3/lock_session.sh"
+bindsym $mod+Control+l exec --no-startup-id i3lock -n -i ~/wallpapers/lock-wallpaper.png
+
+# volume increase
+bindsym $mod+Shift+p exec --no-startup-id "volume_increase 3"
+
+# volume decrease
+bindsym $mod+Shift+o exec --no-startup-id "volume_decrease 3"
+
+# volume toggle
+bindsym $mod+Shift+i exec --no-startup-id "volume_toggle"
+
+# define resize mode
+mode "resize" {
+    set $resize_size1 1
+    bindsym h resize shrink width $resize_size1 px or $resize_size1 ppt
+    bindsym j resize grow height $resize_size1 px or $resize_size1 ppt
+    bindsym k resize shrink height $resize_size1 px or $resize_size1 ppt
+    bindsym l resize grow width $resize_size1 px or $resize_size1 ppt
+
+    set $resize_size2 10
+    bindsym Shift+h resize shrink width $resize_size2 px or $resize_size2 ppt
+    bindsym Shift+j resize grow height $resize_size2 px or $resize_size2 ppt
+    bindsym Shift+k resize shrink height $resize_size2 px or $resize_size2 ppt
+    bindsym Shift+l resize grow width $resize_size2 px or $resize_size2 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# enable resize mode
+bindsym $mod+r mode "resize"
+
+# define apps mode
+mode "apps" {
+    bindsym c workspace $ws1; exec chromium; mode "default"
+    bindsym s workspace $ws2; exec chromium --app=http://open.spotify.com; mode "default"
+    bindsym b exec chromium --app=http://drive.google.com; mode "default"
+    bindsym t exec chromium --app=http://translate.google.com; mode "default"
+    bindsym u exec system_update; mode "default"
+    bindsym p exec power_management; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# enable apps mode
+bindsym $mod+q mode "apps"
+
+# print screen
+bindsym Print exec --no-startup-id scrot
+
+# define bar
+bar {
+    strip_workspace_numbers yes
+    position bottom
+    tray_output none
+    workspace_min_width 25
+    i3bar_command i3bar --transparency
+    status_command i3blocks
+    font pango:DejaVu Sans Mono, Icons 12
+    colors {
+        background #151515FF
+    }
+}
+
+# window border 1 px
+for_window [class=".*"] border pixel 1
+
+# termite based calendar properties
+for_window [class="termite_calendar"] border pixel 2
+for_window [class="termite_calendar"] floating enable
+for_window [class="termite_calendar"] resize set width 600 px height 180 px
+for_window [class="termite_calendar"] move right 1052 px
+for_window [class="termite_calendar"] move down 740 px
+
+# termite based power management popup
+for_window [class="termite_power_management"] border pixel 2
+for_window [class="termite_power_management"] floating enable
+for_window [class="termite_power_management"] resize set width 235 px height 130 px
+for_window [class="termite_power_management"] move position center
+
+# termite based system update popup
+for_window [class="termite_system_update"] border pixel 2
+for_window [class="termite_system_update"] floating enable
+for_window [class="termite_system_update"] resize set width 1000 px height 500 px
+for_window [class="termite_system_update"] move position center
+
+# gaps
+set $gaps_default 17
+gaps inner $gaps_default
+smart_gaps on
+smart_borders on
+
+# define gaps mode
+mode "gaps" {
+    bindsym 0 exec "i3-msg gaps inner current set 0"; mode "default"
+    bindsym 9 exec "i3-msg gaps inner current set $gaps_default"; mode "default"
+    bindsym 8 exec "i3-msg gaps inner current plus 2"
+    bindsym 7 exec "i3-msg gaps inner current minus 2"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# enable gaps mode
+bindsym $mod+g mode "gaps"
+
+# disable focus based on mouse movement
+focus_follows_mouse no
+
+# go back and forth easily
+bindsym $mod+Tab workspace back_and_forth
+
+# colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #2279ab
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #474747
+client.unfocused        #333333 #222222 #888888 #292d2e   #303030
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
