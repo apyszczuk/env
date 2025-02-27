@@ -1,0 +1,19 @@
+[user]
+	email = apyszczuk@gmail.com
+	name = Artur Pyszczuk
+[core]
+	editor = vim
+[init]
+	defaultBranch = master
+[diff]
+	tool = vimdiff
+[push]
+    autoSetupRemote = true
+[difftool]
+	prompt = false
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
