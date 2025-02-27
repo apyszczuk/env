@@ -101,8 +101,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # lock screen
-# bindsym $mod+Control+l exec --no-startup-id "~/.config/i3/lock_session.sh"
-bindsym $mod+Control+l exec --no-startup-id i3lock -n -i ~/wallpapers/lock-wallpaper.png
+bindsym $mod+Control+l exec --no-startup-id i3lock -n -c 000000
 
 # volume increase
 bindsym $mod+Shift+p exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
