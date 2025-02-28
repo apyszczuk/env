@@ -139,6 +139,7 @@ mode "apps" {
     bindsym s workspace $ws2; exec chromium --app=http://open.spotify.com; mode "default"
     bindsym b exec chromium --app=http://drive.google.com; mode "default"
     bindsym t exec chromium --app=http://translate.google.com; mode "default"
+    bindsym Shift+p exec systemctl poweroff; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
