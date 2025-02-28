@@ -13,6 +13,6 @@ output=$(awk '{
 
 [ ${#output} -le 2 ] && echo "$output"min && exit 0
 
-echo "$output"
+echo " $output"
 
 exit 0
