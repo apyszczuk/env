@@ -4,7 +4,7 @@ all_packages=$(pacman -Q | wc -l)
 explicitly_installed=$(pacman -Qe | wc -l)
 available_upgrade_packages=$(echo "n" | sudo pacman -Syu 2> /dev/null | grep "Package" | awk '{print $2}' | sed 's/(//' | sed 's/)//')
 
-echo -n "$all_packages/$explicitly_installed"
+echo -n " $all_packages/$explicitly_installed"
 
 if [ "$available_upgrade_packages" != "" ]; then
     echo -n "/"
