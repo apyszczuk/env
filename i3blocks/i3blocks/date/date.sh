@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "$(date "+$FORMAT")" && exit 0
+echo " $(date "+$FORMAT")" && exit 0
