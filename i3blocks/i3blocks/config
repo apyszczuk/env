@@ -62,12 +62,6 @@ command=./loadavg/loadavg.sh
 interval=10
 
 
-[system_update]
-command=./system_update/system_update.sh
-BUTTON=1
-interval=persist
-
-
 [pacman]
 command=./pacman/pacman.sh
 interval=3600

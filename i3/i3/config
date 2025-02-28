@@ -168,12 +168,6 @@ bar {
 # window border 1 px
 for_window [class=".*"] border pixel 1
 
-# termite based system update popup
-for_window [class="termite_system_update"] border pixel 2
-for_window [class="termite_system_update"] floating enable
-for_window [class="termite_system_update"] resize set width 1000 px height 500 px
-for_window [class="termite_system_update"] move position center
-
 # gaps
 set $gaps_default 17
 gaps inner $gaps_default
