@@ -24,11 +24,11 @@ get_volume_prop
 while read button
 do
 	if [ "$button" -eq "$INCREASE_BUTTON" ]; then
-        volume_increase "$STEP_VALUE"
+        sh ~/.config/i3/scripts/volume_increase.sh "$STEP_VALUE"
 	elif [ "$button" -eq "$DECREASE_BUTTON" ]; then
-        volume_decrease "$STEP_VALUE"
+        sh ~/.config/i3/scripts/volume_decrease.sh "$STEP_VALUE"
 	elif [ "$button" -eq "$MUTE_BUTTON" ]; then
-        volume_toggle
+        sh ~/.config/i3/scripts/volume_toggle.sh
 	fi
 	get_volume_prop
 done
