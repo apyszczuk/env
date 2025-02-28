@@ -168,13 +168,6 @@ bar {
 # window border 1 px
 for_window [class=".*"] border pixel 1
 
-# termite based calendar properties
-for_window [class="termite_calendar"] border pixel 2
-for_window [class="termite_calendar"] floating enable
-for_window [class="termite_calendar"] resize set width 600 px height 180 px
-for_window [class="termite_calendar"] move right 1052 px
-for_window [class="termite_calendar"] move down 740 px
-
 # termite based system update popup
 for_window [class="termite_system_update"] border pixel 2
 for_window [class="termite_system_update"] floating enable

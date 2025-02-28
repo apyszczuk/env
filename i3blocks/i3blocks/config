@@ -84,12 +84,6 @@ min_width=OFF 100%
 align=center
 
 
-[calendar]
-command=./calendar/calendar.sh
-BUTTON=1
-interval=persist
-
-
 [date_and_time]
 command=./date/date.sh
 FORMAT=%a %F %H:%M
