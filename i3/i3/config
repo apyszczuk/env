@@ -175,12 +175,6 @@ for_window [class="termite_calendar"] resize set width 600 px height 180 px
 for_window [class="termite_calendar"] move right 1052 px
 for_window [class="termite_calendar"] move down 740 px
 
-# termite based power management popup
-for_window [class="termite_power_management"] border pixel 2
-for_window [class="termite_power_management"] floating enable
-for_window [class="termite_power_management"] resize set width 235 px height 130 px
-for_window [class="termite_power_management"] move position center
-
 # termite based system update popup
 for_window [class="termite_system_update"] border pixel 2
 for_window [class="termite_system_update"] floating enable

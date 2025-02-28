@@ -94,9 +94,3 @@ interval=persist
 command=./date/date.sh
 FORMAT=%a %F %H:%M
 interval=10
-
-
-[power_management]
-command=./power_management/power_management.sh
-BUTTON=1
-interval=persist
