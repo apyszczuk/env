@@ -16,7 +16,7 @@ done
 temperature_no_unit=`expr $sum / ${#arr[@]}`
 temperature_with_unit="$temperature_no_unit"°C
 
-echo "$temperature_with_unit"
+echo " $temperature_with_unit"
 
 [ "$temperature_no_unit" -ge "$HIGH_LEVEL" ] && exit 33
 
