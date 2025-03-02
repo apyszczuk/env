@@ -42,6 +42,15 @@ function prompt_git_branch_name()
 
 function prompt_git()
 {
+    # Dont know for sure, but maybe just git status and parse
+    # content in echo prompt_git_* function to get what you want
+    # probably everything will be there and one call to git, not
+    # 4 (get: modified, staged, untracked and up to date with origin)
+    # call to branch will probably stay, but it is possible also
+    # to get it from status. Don't know now, have to consider.
+    # git status --porcelain or maybe something else
+    #
+    # Probably add functions in_red(str); in_green(str) etc
     is_repo=$(git rev-parse --is-inside-work-tree 2> /dev/null)
     if [ "$is_repo" == "true" ]; then
         printf " "
