@@ -23,7 +23,7 @@ function prompt_git_untracked()
     if [ "$value" == "" ]; then
         printf ""
     else
-        print_in_color "$color_blue" "%"
+        printf "%s" "%"
     fi
 }
 
@@ -35,7 +35,7 @@ function prompt_git_modified()
     if [ "$value" == "" ]; then
         printf ""
     else
-        print_in_color "$color_red" "*"
+        printf "*"
     fi
 }
 
@@ -47,7 +47,7 @@ function prompt_git_staged()
     if [ "$value" == "" ]; then
         printf ""
     else
-        print_in_color "$color_green" "+"
+        printf "+"
     fi
 }
 #
@@ -63,7 +63,7 @@ function prompt_git_branch_name()
     if [ "$branch_name" == "" ]; then
         branch_name=$(printf "$stat" | grep "^HEAD detached at" | awk '{ print $4}')
     fi
-    print_in_color "$color_green" "$branch_name"
+    printf "$branch_name"
 }
 
 function prompt_git()
@@ -75,10 +75,10 @@ function prompt_git()
 
         printf " "
         printf "("
-        prompt_git_branch_name "$stat"
-        prompt_git_modified "$stat"
-        prompt_git_staged "$stat"
-        prompt_git_untracked "$stat"
+        print_in_color "$color_green" "$(prompt_git_branch_name "$stat")"
+        print_in_color "$color_red" "$(prompt_git_modified "$stat")"
+        print_in_color "$color_green" "$(prompt_git_staged "$stat")"
+        print_in_color "$color_blue" "$(prompt_git_untracked "$stat")"
         printf ")"
     else
         printf ""
