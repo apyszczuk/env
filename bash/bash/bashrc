@@ -19,14 +19,14 @@ function prompt_git_status_parse()
 {
     status="$1"
     greptext="$2"
-    retchar="$3"
+    ret="$3"
 
     value=$(printf "$status" | grep "$greptext")
     
     if [ "$value" == "" ]; then
         printf ""
     else
-        printf "$retchar"
+        printf "$ret"
     fi
 }
 
