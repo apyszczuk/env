@@ -14,6 +14,8 @@ alias gds='git diff --staged'
 color_white="01;37"
 color_yellow="01;33"
 color_blue="01;34"
+color_red="01;31"
+color_green="01;32"
 
 function print_in_color()
 {
@@ -27,6 +29,88 @@ function print_in_color()
     printf "\[\033[%sm\]%s\[\033[0m\]" "$color" "$str"
 }
 
+function prompt_git_status_parse()
+{
+    status="$1"
+    greptext="$2"
+    ret="$3"
+
+    value=$(printf "$status" | grep "$greptext")
+    
+    if [ "$value" == "" ]; then
+        printf ""
+    else
+        printf "$ret"
+    fi
+}
+
+function prompt_git_untracked()
+{
+    prompt_git_status_parse "$1" "^Untracked files:" "%%"
+}
+
+function prompt_git_modified()
+{
+    prompt_git_status_parse "$1" "^Changes not staged for commit:" "*"
+}
+
+function prompt_git_staged()
+{
+    prompt_git_status_parse "$1" "^Changes to be committed:" "+"
+}
+
+function prompt_git_branch_up_to_date()
+{
+    prompt_git_status_parse "$1" "^Your branch is up to date with" "="
+}
+
+function prompt_git_branch_ahead()
+{
+    prompt_git_status_parse "$1" "^Your branch is ahead of" ">"
+}
+
+function prompt_git_branch_behind()
+{
+    prompt_git_status_parse "$1" "^Your branch is behind" "<"
+}
+
+function prompt_git_branch_diverged()
+{
+    prompt_git_status_parse "$1" "^Your branch and '.*' have diverged" "<>"
+}
+
+function prompt_git_branch_name()
+{
+    stat="$1"
+    branch_name=$(printf "$stat" | grep "^On branch" | awk '{ print $3}')
+    if [ "$branch_name" == "" ]; then
+        branch_name=$(printf "$stat" | grep "^HEAD detached at" | awk '{ print $4}')
+    fi
+    printf "$branch_name"
+}
+
+function prompt_git()
+{
+    is_repo=$(git rev-parse --is-inside-work-tree 2> /dev/null)
+    if [ "$is_repo" == "true" ]; then
+        stat=$(git status)
+
+        printf " "
+        printf "("
+        print_in_color "$color_green" "$(prompt_git_branch_name "$stat")"
+        print_in_color "$color_red" "$(prompt_git_modified "$stat")"
+        print_in_color "$color_green" "$(prompt_git_staged "$stat")"
+        print_in_color "$color_blue" "$(prompt_git_untracked "$stat")"
+        print_in_color "$color_green" "$(prompt_git_branch_up_to_date "$stat")"
+        print_in_color "$color_green" "$(prompt_git_branch_ahead "$stat")"
+        print_in_color "$color_green" "$(prompt_git_branch_behind "$stat")"
+        print_in_color "$color_red" "$(prompt_git_branch_diverged "$stat")"
+        printf ")"
+    else
+        printf ""
+    fi
+}
+
 function prompt()
 {
     print_in_color "$color_white" "\u"
@@ -34,6 +118,7 @@ function prompt()
     print_in_color "$color_yellow" "\h"
     printf ":"
     print_in_color "$color_blue" "\w"
+    prompt_git
     printf " $ "
 }
 
