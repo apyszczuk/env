@@ -15,48 +15,49 @@ function print_in_color()
     printf "\[\033[%sm\]%s\[\033[0m\]" "$color" "$str"
 }
 
-function prompt_git_untracked()
+function prompt_git_status_parse()
 {
-    value=$(printf "$1" | grep "^Untracked files:")
+    status="$1"
+    greptext="$2"
+    retchar="$3"
+
+    value=$(printf "$status" | grep "$greptext")
     
     if [ "$value" == "" ]; then
         printf ""
     else
-        printf "%s" "%"
+        printf "$retchar"
     fi
+}
+
+function prompt_git_untracked()
+{
+    prompt_git_status_parse "$1" "^Untracked files:" "%%"
 }
 
 function prompt_git_modified()
 {
-    value=$(printf "$1" | grep "^Changes not staged for commit:")
-    
-    if [ "$value" == "" ]; then
-        printf ""
-    else
-        printf "*"
-    fi
+    prompt_git_status_parse "$1" "^Changes not staged for commit:" "*"
 }
 
 function prompt_git_staged()
 {
-    value=$(printf "$1" | grep "^Changes to be committed:")
-
-    if [ "$value" == "" ]; then
-        printf ""
-    else
-        printf "+"
-    fi
+    prompt_git_status_parse "$1" "^Changes to be committed:" "+"
 }
 
 function prompt_git_branch_up_to_date()
 {
-    value=$(printf "$1" | grep "^Your branch is up to date with")
+    prompt_git_status_parse "$1" "^Your branch is up to date with" "="
+}
 
-    if [ "$value" == "" ]; then
-        printf ""
-    else
-        printf "="
-    fi
+function prompt_git_branch_ahead()
+{
+    prompt_git_status_parse "$1" "^Your branch is ahead of" ">"
+}
+
+function prompt_git_branch_behind()
+{
+    prompt_git_status_parse "$1" "^Your branch is behind" "<"
 }
 
 function prompt_git_branch_name()
@@ -82,6 +83,8 @@ function prompt_git()
         print_in_color "$color_green" "$(prompt_git_staged "$stat")"
         print_in_color "$color_blue" "$(prompt_git_untracked "$stat")"
         print_in_color "$color_green" "$(prompt_git_branch_up_to_date "$stat")"
+        print_in_color "$color_green" "$(prompt_git_branch_ahead "$stat")"
+        print_in_color "$color_green" "$(prompt_git_branch_behind "$stat")"
         printf ")"
     else
         printf ""
