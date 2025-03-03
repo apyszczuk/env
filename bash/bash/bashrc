@@ -2,3 +2,10 @@
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias l='ls -lah'
+
+# git
+alias gst='git status'
+alias glgg='git log --decorate --graph'
+alias glgga='git log --decorate --graph --all'
+alias gd='git diff'
+alias gds='git diff --staged'
