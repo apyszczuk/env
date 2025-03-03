@@ -47,11 +47,17 @@ function prompt_git_staged()
         printf "+"
     fi
 }
-#
-# function prompt_git_origin_uptodate()
-# {
 
-# }
+function prompt_git_branch_up_to_date()
+{
+    value=$(printf "$1" | grep "^Your branch is up to date with")
+
+    if [ "$value" == "" ]; then
+        printf ""
+    else
+        printf "="
+    fi
+}
 
 function prompt_git_branch_name()
 {
@@ -75,6 +81,7 @@ function prompt_git()
         print_in_color "$color_red" "$(prompt_git_modified "$stat")"
         print_in_color "$color_green" "$(prompt_git_staged "$stat")"
         print_in_color "$color_blue" "$(prompt_git_untracked "$stat")"
+        print_in_color "$color_green" "$(prompt_git_branch_up_to_date "$stat")"
         printf ")"
     else
         printf ""
