@@ -36,7 +36,11 @@ function prompt_git_staged()
 
 function prompt_git_branch_name()
 {
-    branch_name=$(git branch | grep \* | sed 's/* //g' | sed 's/(//g' | sed 's/)//g' | sed 's/HEAD detached at //g')
+    stat="$1"
+    branch_name=$(printf "$stat" | grep "^On branch" | awk '{ print $3}')
+    if [ "$branch_name" == "" ]; then
+        branch_name=$(printf "$stat" | grep "^HEAD detached at" | awk '{ print $4}')
+    fi
     printf "\[\033[01;32m\]$branch_name\[\033[0m\]"
 }
 
@@ -53,9 +57,11 @@ function prompt_git()
     # Probably add functions in_red(str); in_green(str) etc
     is_repo=$(git rev-parse --is-inside-work-tree 2> /dev/null)
     if [ "$is_repo" == "true" ]; then
+        stat=$(git status)
+
         printf " "
         printf "("
-        prompt_git_branch_name
+        prompt_git_branch_name "$stat"
         prompt_git_modified
         prompt_git_staged
         prompt_git_untracked
