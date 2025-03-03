@@ -9,3 +9,32 @@ alias glgg='git log --decorate --graph'
 alias glgga='git log --decorate --graph --all'
 alias gd='git diff'
 alias gds='git diff --staged'
+
+
+color_white="01;37"
+color_yellow="01;33"
+color_blue="01;34"
+
+function print_in_color()
+{
+    color="$1"
+    str="$2"
+
+    # "\[" and "\]" are special characters to begin and end sequence of
+    # non-printing characters. Without them, prompt gets messy.
+    #
+    # https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#index-prompting
+    printf "\[\033[%sm\]%s\[\033[0m\]" "$color" "$str"
+}
+
+function prompt()
+{
+    print_in_color "$color_white" "\u"
+    printf "@"
+    print_in_color "$color_yellow" "\h"
+    printf ":"
+    print_in_color "$color_blue" "\w"
+    printf " $ "
+}
+
+export PROMPT_COMMAND="export PS1=\$(prompt)"
