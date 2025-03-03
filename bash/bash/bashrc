@@ -3,7 +3,8 @@ alias ll='ls -l'
 
 function prompt_git_untracked()
 {
-    value=$(git status | grep "Untracked files:")
+    stat="$1"
+    value=$(printf "$stat" | grep "^Untracked files:")
     
     if [ "$value" == "" ]; then
         printf ""
@@ -71,7 +72,7 @@ function prompt_git()
         prompt_git_branch_name "$stat"
         prompt_git_modified "$stat"
         prompt_git_staged "$stat"
-        prompt_git_untracked
+        prompt_git_untracked "$stat"
         printf ")"
     else
         printf ""
