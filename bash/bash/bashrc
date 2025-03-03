@@ -60,6 +60,11 @@ function prompt_git_branch_behind()
     prompt_git_status_parse "$1" "^Your branch is behind" "<"
 }
 
+function prompt_git_branch_diverged()
+{
+    prompt_git_status_parse "$1" "^Your branch and '.*' have diverged" "<>"
+}
+
 function prompt_git_branch_name()
 {
     stat="$1"
@@ -85,6 +90,7 @@ function prompt_git()
         print_in_color "$color_green" "$(prompt_git_branch_up_to_date "$stat")"
         print_in_color "$color_green" "$(prompt_git_branch_ahead "$stat")"
         print_in_color "$color_green" "$(prompt_git_branch_behind "$stat")"
+        print_in_color "$color_red" "$(prompt_git_branch_diverged "$stat")"
         printf ")"
     else
         printf ""
