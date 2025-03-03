@@ -113,13 +113,19 @@ function prompt_git()
 
 function prompt()
 {
+    if [ "$?" == "0" ]; then
+        prompt_sign_color="$color_green"
+    else
+        prompt_sign_color="$color_yellow"
+    fi
+
     print_in_color "$color_white" "\u"
     printf "@"
     print_in_color "$color_yellow" "\h"
     printf ":"
     print_in_color "$color_blue" "\w"
     prompt_git
-    printf " $ "
+    print_in_color "$prompt_sign_color" " $ "
 }
 
 export PROMPT_COMMAND="export PS1=\$(prompt)"
