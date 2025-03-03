@@ -1,6 +1,8 @@
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias gst='git status'
+alias glgg='git log --decorate --graph'
+alias glgga='git log --decorate --graph --all'
 
 color_white="01;37"
 color_yellow="01;33"
