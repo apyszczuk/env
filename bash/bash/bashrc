@@ -1,6 +1,17 @@
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
+color_white="01;37"
+color_yellow="01;33"
+color_blue="01;34"
+
+function print_in_color()
+{
+    color="$1"
+    str="$2"
+    printf "\[\033[%sm\]%s\[\033[0m\]" "$color" "$str"
+}
+
 function prompt_git_untracked()
 {
     stat="$1"
@@ -73,11 +84,11 @@ function prompt_git()
 
 function prompt()
 {
-    printf "\[\033[01;37m\]\\\u\[\033[0m\]"
+    print_in_color "$color_white" "\u"
     printf "@"
-    printf "\[\033[01;33m\]\\\h\[\033[0m\]"
+    print_in_color "$color_yellow" "\h"
     printf ":"
-    printf "\[\033[01;34m\]\\\w\[\033[0m\]"
+    print_in_color "$color_blue" "\w"
     prompt_git
     printf " $ "
 }
