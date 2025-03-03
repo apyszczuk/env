@@ -14,8 +14,9 @@ function prompt_git_untracked()
 
 function prompt_git_modified()
 {
-    value=$(git diff-index HEAD)
-
+    stat="$1"
+    value=$(printf "$stat" | grep "^Changes not staged for commit:")
+    
     if [ "$value" == "" ]; then
         printf ""
     else
@@ -68,8 +69,8 @@ function prompt_git()
         printf " "
         printf "("
         prompt_git_branch_name "$stat"
-        prompt_git_staged
         prompt_git_modified "$stat"
+        prompt_git_staged "$stat"
         prompt_git_untracked
         printf ")"
     else
