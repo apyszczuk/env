@@ -7,6 +7,10 @@ alias l='ls -lah'
 alias gst='git status'
 alias glgg='git log --decorate --graph'
 alias glgga='git log --decorate --graph --all'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gb='git branch'
+alias gba='git branch -a'
 
 
 color_white="01;37"
