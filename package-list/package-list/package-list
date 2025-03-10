@@ -45,6 +45,7 @@ picom
 polkit
 python
 ripgrep
+rxvt-unicode
 scrot
 sudo
 termite
