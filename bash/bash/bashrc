@@ -8,6 +8,9 @@ alias l='ls -lah'
 # cp
 alias cp='cp -i'
 
+# rm
+alias rm='rm -i'
+
 # git
 alias gst='git status'
 alias glgg='git log --decorate --graph'
