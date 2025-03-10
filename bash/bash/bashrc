@@ -38,13 +38,13 @@ bind 'set bind-tty-special-chars off'
 
 # PROMPT ---------------------------------------------------------------------------------
 
-color_white="01;37"
-color_yellow="01;33"
-color_blue="01;34"
-color_red="01;31"
-color_green="01;32"
+_color_white="01;37"
+_color_yellow="01;33"
+_color_blue="01;34"
+_color_red="01;31"
+_color_green="01;32"
 
-function print_in_color()
+function _print_in_color()
 {
     color="$1"
     str="$2"
@@ -56,7 +56,7 @@ function print_in_color()
     printf "\[\033[%sm\]%s\[\033[0m\]" "$color" "$str"
 }
 
-function prompt_git_status_parse()
+function _prompt_git_status_parse()
 {
     status="$1"
     greptext="$2"
@@ -71,42 +71,42 @@ function prompt_git_status_parse()
     fi
 }
 
-function prompt_git_untracked()
+function _prompt_git_untracked()
 {
-    prompt_git_status_parse "$1" "^Untracked files:" "%%"
+    _prompt_git_status_parse "$1" "^Untracked files:" "%%"
 }
 
-function prompt_git_modified()
+function _prompt_git_modified()
 {
-    prompt_git_status_parse "$1" "^Changes not staged for commit:" "*"
+    _prompt_git_status_parse "$1" "^Changes not staged for commit:" "*"
 }
 
-function prompt_git_staged()
+function _prompt_git_staged()
 {
-    prompt_git_status_parse "$1" "^Changes to be committed:" "+"
+    _prompt_git_status_parse "$1" "^Changes to be committed:" "+"
 }
 
-function prompt_git_branch_up_to_date()
+function _prompt_git_branch_up_to_date()
 {
-    prompt_git_status_parse "$1" "^Your branch is up to date with" "="
+    _prompt_git_status_parse "$1" "^Your branch is up to date with" "="
 }
 
-function prompt_git_branch_ahead()
+function _prompt_git_branch_ahead()
 {
-    prompt_git_status_parse "$1" "^Your branch is ahead of" ">"
+    _prompt_git_status_parse "$1" "^Your branch is ahead of" ">"
 }
 
-function prompt_git_branch_behind()
+function _prompt_git_branch_behind()
 {
-    prompt_git_status_parse "$1" "^Your branch is behind" "<"
+    _prompt_git_status_parse "$1" "^Your branch is behind" "<"
 }
 
-function prompt_git_branch_diverged()
+function _prompt_git_branch_diverged()
 {
-    prompt_git_status_parse "$1" "^Your branch and '.*' have diverged" "<>"
+    _prompt_git_status_parse "$1" "^Your branch and '.*' have diverged" "<>"
 }
 
-function prompt_git_branch_name()
+function _prompt_git_branch_name()
 {
     stat="$1"
     branch_name=$(printf "$stat" | grep "^On branch" | awk '{ print $3}')
@@ -116,7 +116,7 @@ function prompt_git_branch_name()
     printf "$branch_name"
 }
 
-function prompt_git()
+function _prompt_git()
 {
     is_repo=$(git rev-parse --is-inside-work-tree 2> /dev/null)
     if [ "$is_repo" == "true" ]; then
@@ -124,35 +124,35 @@ function prompt_git()
 
         printf " "
         printf "("
-        print_in_color "$color_green" "$(prompt_git_branch_name "$stat")"
-        print_in_color "$color_red" "$(prompt_git_modified "$stat")"
-        print_in_color "$color_green" "$(prompt_git_staged "$stat")"
-        print_in_color "$color_blue" "$(prompt_git_untracked "$stat")"
-        print_in_color "$color_green" "$(prompt_git_branch_up_to_date "$stat")"
-        print_in_color "$color_green" "$(prompt_git_branch_ahead "$stat")"
-        print_in_color "$color_green" "$(prompt_git_branch_behind "$stat")"
-        print_in_color "$color_red" "$(prompt_git_branch_diverged "$stat")"
+        _print_in_color "$_color_green" "$(_prompt_git_branch_name "$stat")"
+        _print_in_color "$_color_red" "$(_prompt_git_modified "$stat")"
+        _print_in_color "$_color_green" "$(_prompt_git_staged "$stat")"
+        _print_in_color "$_color_blue" "$(_prompt_git_untracked "$stat")"
+        _print_in_color "$_color_green" "$(_prompt_git_branch_up_to_date "$stat")"
+        _print_in_color "$_color_green" "$(_prompt_git_branch_ahead "$stat")"
+        _print_in_color "$_color_green" "$(_prompt_git_branch_behind "$stat")"
+        _print_in_color "$_color_red" "$(_prompt_git_branch_diverged "$stat")"
         printf ")"
     else
         printf ""
     fi
 }
 
-function prompt()
+function _prompt()
 {
     if [ "$?" == "0" ]; then
-        prompt_sign_color="$color_green"
+        prompt_sign_color="$_color_green"
     else
-        prompt_sign_color="$color_yellow"
+        prompt_sign_color="$_color_yellow"
     fi
 
-    print_in_color "$color_white" "\u"
+    _print_in_color "$_color_white" "\u"
     printf "@"
-    print_in_color "$color_yellow" "\h"
+    _print_in_color "$_color_yellow" "\h"
     printf ":"
-    print_in_color "$color_blue" "\w"
-    prompt_git
-    print_in_color "$prompt_sign_color" " $ "
+    _print_in_color "$_color_blue" "\w"
+    _prompt_git
+    _print_in_color "$prompt_sign_color" " $ "
 }
 
-export PROMPT_COMMAND="export PS1=\$(prompt)"
+export PROMPT_COMMAND="export PS1=\$(_prompt)"
