@@ -5,6 +5,9 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias l='ls -lah'
 
+# cp
+alias cp='cp -i'
+
 # git
 alias gst='git status'
 alias glgg='git log --decorate --graph'
