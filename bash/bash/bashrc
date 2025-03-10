@@ -11,6 +11,13 @@ alias cp='cp -i'
 # rm
 alias rm='rm -i'
 
+# cd
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+
 # git
 alias gst='git status'
 alias glgg='git log --decorate --graph'
