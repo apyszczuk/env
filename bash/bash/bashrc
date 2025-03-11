@@ -164,8 +164,12 @@ function _prompt()
     _print_in_color "$_color_yellow" "\h"
     printf ":"
     _print_in_color "$_color_blue" "\w"
-    _prompt_git
+    if [ "$ENV_BASH_PROMPT_GIT_STATUS_ENABLED" == "1" ]; then
+        _prompt_git
+    fi
     _print_in_color "$prompt_sign_color" " $ "
 }
 
 export PROMPT_COMMAND="export PS1=\$(_prompt)"
+
+export ENV_BASH_PROMPT_GIT_STATUS_ENABLED=1
