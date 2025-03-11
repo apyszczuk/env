@@ -153,10 +153,13 @@ function _prompt_git()
 
 function _prompt()
 {
-    if [ "$?" == "0" ]; then
-        prompt_sign_color="$_color_green"
-    else
+    last_command_status="$?"
+    prompt_sign_color="$_color_white"
+    if [ "$ENV_BASH_PROMPT_LAST_COMMAND_STATUS_ENABLED" == "1" ]; then
         prompt_sign_color="$_color_yellow"
+        if [ "$last_command_status" == "0" ]; then
+            prompt_sign_color="$_color_green"
+        fi
     fi
 
     _print_in_color "$_color_white" "\u"
@@ -173,3 +176,4 @@ function _prompt()
 export PROMPT_COMMAND="export PS1=\$(_prompt)"
 
 export ENV_BASH_PROMPT_GIT_STATUS_ENABLED=1
+export ENV_BASH_PROMPT_LAST_COMMAND_STATUS_ENABLED=1
