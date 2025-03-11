@@ -133,11 +133,14 @@ function _prompt_git()
 {
     is_repo=$(git rev-parse --is-inside-work-tree 2> /dev/null)
     if [ "$is_repo" == "true" ]; then
-        git_status_option=""
+        git_flags=""
         if [ "$ENV_BASH_PROMPT_GIT_STATUS_IGNORE_SUBMODULES_ENABLED" == "1" ]; then
-            git_status_option="--ignore-submodules"
+            git_flags+=" --ignore-submodules"
         fi
-        stat=$(git status $git_status_option)
+        if [ "$ENV_BASH_PROMPT_GIT_STATUS_IGNORE_UNTRACKED_FILES_ENABLED" == "1" ]; then
+            git_flags+=" --untracked-files=no"
+        fi
+        stat=$(git status $git_flags)
 
         printf " "
         printf "("
@@ -182,3 +185,4 @@ export PROMPT_COMMAND="export PS1=\$(_prompt)"
 export ENV_BASH_PROMPT_GIT_STATUS_ENABLED=1
 export ENV_BASH_PROMPT_LAST_COMMAND_STATUS_ENABLED=1
 export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_SUBMODULES_ENABLED=1
+export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_UNTRACKED_FILES_ENABLED=0
