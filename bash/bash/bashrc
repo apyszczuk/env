@@ -134,10 +134,10 @@ function _prompt_git()
     is_repo=$(git rev-parse --is-inside-work-tree 2> /dev/null)
     if [ "$is_repo" == "true" ]; then
         git_flags=""
-        if [ "$ENV_BASH_PROMPT_GIT_STATUS_IGNORE_SUBMODULES_ENABLED" == "1" ]; then
+        if [ "$ENV_BASH_PROMPT_GIT_STATUS_IGNORE_SUBMODULES" == "1" ]; then
             git_flags+=" --ignore-submodules"
         fi
-        if [ "$ENV_BASH_PROMPT_GIT_STATUS_IGNORE_UNTRACKED_FILES_ENABLED" == "1" ]; then
+        if [ "$ENV_BASH_PROMPT_GIT_STATUS_IGNORE_UNTRACKED_FILES" == "1" ]; then
             git_flags+=" --untracked-files=no"
         fi
         stat=$(git status $git_flags)
@@ -162,7 +162,7 @@ function _prompt()
 {
     last_command_status="$?"
     prompt_sign_color="$_color_white"
-    if [ "$ENV_BASH_PROMPT_LAST_COMMAND_STATUS_ENABLED" == "1" ]; then
+    if [ "$ENV_BASH_PROMPT_LAST_COMMAND_STATUS" == "1" ]; then
         prompt_sign_color="$_color_yellow"
         if [ "$last_command_status" == "0" ]; then
             prompt_sign_color="$_color_green"
@@ -174,7 +174,7 @@ function _prompt()
     _print_in_color "$_color_yellow" "\h"
     printf ":"
     _print_in_color "$_color_blue" "\w"
-    if [ "$ENV_BASH_PROMPT_GIT_STATUS_ENABLED" == "1" ]; then
+    if [ "$ENV_BASH_PROMPT_GIT_STATUS" == "1" ]; then
         _prompt_git
     fi
     _print_in_color "$prompt_sign_color" " $ "
@@ -182,7 +182,10 @@ function _prompt()
 
 export PROMPT_COMMAND="export PS1=\$(_prompt)"
 
-export ENV_BASH_PROMPT_GIT_STATUS_ENABLED=1
-export ENV_BASH_PROMPT_LAST_COMMAND_STATUS_ENABLED=1
-export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_SUBMODULES_ENABLED=1
-export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_UNTRACKED_FILES_ENABLED=0
+
+# DEFAULT CONFIGURATION ------------------------------------------------------------------
+
+export ENV_BASH_PROMPT_GIT_STATUS=1
+export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_SUBMODULES=1
+export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_UNTRACKED_FILES=0
+export ENV_BASH_PROMPT_LAST_COMMAND_STATUS=1
