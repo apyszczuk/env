@@ -48,7 +48,32 @@ bind '"\e[Z":menu-complete-backward'
 bind '"\C-w":backward-kill-word'
 bind 'set bind-tty-special-chars off'
 
-export HISTCONTROL=ignorespace:ignoredups:erasedups
+
+# HISTORY --------------------------------------------------------------------------------
+
+# do not save line if it starts with a space
+# do not save duplicate lines (session history has one copy of it)
+export HISTCONTROL=ignorespace:erasedups
+export HISTSIZE=1000
+
+# clear history duplicates leaving only the latests
+function _clear_history_duplicates()
+{
+    # if session is about not to save history
+    # or the history file have not yet been created
+    if [ -z "$HISTFILE" ] || [ ! -e "$HISTFILE" ]; then
+        return
+    fi
+
+    tac "$HISTFILE" |
+    cat -n |
+    sort -uk2 |
+    sort -nk1 |
+    tac |
+    cut -f2- > "$HISTFILE.$" && mv "$HISTFILE.$" "$HISTFILE"
+}
+
+_clear_history_duplicates
 
 
 # PROMPT ---------------------------------------------------------------------------------
