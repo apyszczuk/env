@@ -66,6 +66,7 @@ function _clear_history_duplicates()
     fi
 
     tac "$HISTFILE" |
+    awk '{$1=$1};1' |
     cat -n |
     sort -uk2 |
     sort -nk1 |
