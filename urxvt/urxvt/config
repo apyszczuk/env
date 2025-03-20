@@ -1,0 +1,169 @@
+! URxvt.termName:                       string
+! URxvt.geometry:                       geometry
+! URxvt.chdir:                          string
+! URxvt.reverseVideo:                   boolean
+! URxvt.loginShell:                     boolean
+! URxvt.multiClickTime:                 number
+! URxvt.jumpScroll:                     boolean
+! URxvt.skipScroll:                     boolean
+! URxvt.pastableTabs:                   boolean
+! URxvt.scrollstyle:                    mode
+URxvt.scrollBar:                        false
+! URxvt.scrollBar_right:                boolean
+! URxvt.scrollBar_floating:             boolean
+! URxvt.scrollBar_align:                mode
+! URxvt.thickness:                      number
+! URxvt.scrollTtyOutput:                boolean
+! URxvt.scrollTtyKeypress:              boolean
+! URxvt.scrollWithBuffer:               boolean
+! URxvt.fading:                         number
+! URxvt.fadeColor:                      color
+! URxvt.utmpInhibit:                    boolean
+! URxvt.urgentOnBell:                   boolean
+! URxvt.visualBell:                     boolean
+! URxvt.mapAlert:                       boolean
+! URxvt.meta8:                          boolean
+! URxvt.mouseWheelScrollPage:           boolean
+! URxvt.disablePasteBrackets:           boolean
+! URxvt.tripleclickwords:               boolean
+! URxvt.insecure:                       boolean
+! URxvt.cursorUnderline:                boolean
+URxvt.cursorBlink:                      true
+URxvt.pointerBlank:                     true
+URxvt.pointerBlankDelay:                2
+
+URxvt.background:                       [60]#000000
+URxvt.foreground:                       #A8A8A8
+
+! URxvt.color0:                           Black
+! URxvt.color1:                           Red3
+! URxvt.color2:                           Green3
+! URxvt.color3:                           Yellow3
+! URxvt.color4:                           Blue3
+! URxvt.color5:                           Magenta3
+! URxvt.color6:                           Cyan3
+! URxvt.color7:                           AntiqueWhite
+! URxvt.color8:                           Grey25
+! URxvt.color9:                           Red
+! URxvt.color10:                          Green
+! URxvt.color11:                          Yellow
+! URxvt.color12:                          Blue
+! URxvt.color13:                          Magenta
+! URxvt.color14:                          Cyan
+! URxvt.color15:                          White
+
+! URxvt.color0:                           Black
+! URxvt.color1:                           #a40000
+! URxvt.color2:                           #4E9A06
+! URxvt.color3:                           #C4A000
+! URxvt.color4:                           #3465A4
+! URxvt.color5:                           #75507B
+! URxvt.color6:                           #ce5c00
+! URxvt.color7:                           #babdb9
+! URxvt.color8:                           #555753
+! URxvt.color9:                           #EF2929
+! URxvt.color10:                          #8AE234
+! URxvt.color11:                          #FCE94F
+! URxvt.color12:                          #729FCF
+! URxvt.color13:                          #AD7FA8
+! URxvt.color14:                          #fcaf3e
+! URxvt.color15:                          #EEEEEC
+
+! URxvt.colorBD:                        color
+! URxvt.colorIT:                        color
+! URxvt.colorUL:                        color
+! URxvt.colorRV:                        color
+! URxvt.underlineColor:                 color
+! URxvt.scrollColor:                    color
+! URxvt.troughColor:                    color
+! URxvt.highlightColor:                 color
+! URxvt.highlightTextColor:             color
+! URxvt.cursorColor:                    color
+! URxvt.cursorColor2:                   color
+! URxvt.pointerColor:                   color
+! URxvt.pointerColor2:                  color
+! URxvt.borderColor:                    color
+! URxvt.iconFile:                       file
+! URxvt.pointerShape:                   string
+URxvt.font:                             xft:Monospace:size=12:style=Regular
+URxvt.boldFont:                         xft:Monospace:size=12:style=Regular
+! URxvt.italicFont:                     fontname
+! URxvt.boldItalicFont:                 fontname
+! URxvt.intensityStyles:                boolean
+! URxvt.inputMethod:                    name
+! URxvt.preeditType:                    style
+! URxvt.imLocale:                       string
+! URxvt.imFont:                         fontname
+! URxvt.title:                          string
+! URxvt.iconName:                       string
+URxvt.saveLines:                        10000
+! URxvt.buffered:                       boolean
+! URxvt.refreshRate:                    number
+URxvt.depth:                            32
+! URxvt.visual:                         number
+! URxvt.transient-for:                  windowid
+! URxvt.override-redirect:              boolean
+! URxvt.hold:                           boolean
+! URxvt.externalBorder:                 number
+! URxvt.internalBorder:                 number
+! URxvt.borderLess:                     boolean
+URxvt.lineSpace:                        0
+! URxvt.letterSpace:                    number
+! URxvt.skipBuiltinGlyphs:              boolean
+! URxvt.backspacekey:                   string
+! URxvt.deletekey:                      string
+! URxvt.print-pipe:                     string
+! URxvt.modifier:                       modifier
+! URxvt.cutchars:                       string
+! URxvt.answerbackString:               string
+! URxvt.secondaryScreen:                boolean
+! URxvt.secondaryScroll:                boolean
+! URxvt.rewrapMode:                     string
+! URxvt.perl-lib:                       string
+! URxvt.perl-eval:                      perl-eval
+! URxvt.perl-ext-common:                string
+! URxvt.perl-ext:                       string
+URxvt.iso14755:                         false 
+URxvt.iso14755_52:                      false
+! URxvt.xrm:                            string
+! URxvt.keysym.sym:                     keysym
+
+URxvt.keysym.Shift-Control-V:           eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:           eval:selection_to_clipboard
+
+! URxvt.background.border:              boolean
+! URxvt.background.expr:                string
+! URxvt.background.interval:            seconds
+! URxvt.backgroundPixmap:               string
+! URxvt.bell-command:                   string
+! URxvt.blr:                            HxV
+! URxvt.blurRadius:                     HxV
+! URxvt.clickthrough:                   string
+! URxvt.kuake.hotkey:                   string
+! URxvt.matcher.button:                 string
+! URxvt.matcher.launcher:               string
+! URxvt.matcher.launcher.*:             string
+! URxvt.matcher.pattern.*:              string
+! URxvt.matcher.rend.*:                 string
+! URxvt.pixmap:                         string
+! URxvt.remote-clipboard.fetch:         string
+! URxvt.remote-clipboard.store:         string
+! URxvt.searchable-scrollback:          string
+! URxvt.selection-autotransform.*:      string
+! URxvt.selection-pastebin.cmd:         string
+! URxvt.selection-pastebin.url:         string
+! URxvt.selection.pattern-0:            string
+! URxvt.sh:                             number
+! URxvt.shading:                        number
+! URxvt.tab-bg:                         colour
+! URxvt.tab-fg:                         colour
+! URxvt.tabbar-bg:                      colour
+! URxvt.tabbar-fg:                      colour
+! URxvt.tint:                           color
+! URxvt.tintColor:                      color
+! URxvt.tr:                             boolean
+! URxvt.transparent:                    false
+! URxvt.url-launcher:                   string
+
+
+! vim: ft=xdefaults
