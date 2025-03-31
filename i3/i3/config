@@ -22,7 +22,7 @@ font pango:DejaVu Sans Mono 12
 floating_modifier $mod
 
 # open terminal
-bindsym $mod+m exec termite
+bindsym $mod+m exec urxvt
 
 # kill window
 bindsym $mod+Shift+q kill
