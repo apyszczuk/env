@@ -211,6 +211,12 @@ function _prompt()
 export PROMPT_COMMAND="export PS1=\$(_prompt)"
 
 
+# TERMINAL SETTINGS ----------------------------------------------------------------------
+
+# disable XON/XOFF flow control (CTRL-S/CTRL-Q)
+stty -ixon
+
+
 # DEFAULT CONFIGURATION ------------------------------------------------------------------
 
 export ENV_BASH_PROMPT_GIT_STATUS=1
