@@ -1,0 +1,3 @@
+#include ".config/urxvt/config"
+
+! vim: ft=xdefaults
