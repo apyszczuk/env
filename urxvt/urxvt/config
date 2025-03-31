@@ -1,0 +1,55 @@
+! scrollbar
+URxvt.scrollBar:                        false
+
+
+! cursor
+URxvt.cursorBlink:                      false
+
+
+! pointer
+URxvt.pointerBlank:                     true
+URxvt.pointerBlankDelay:                2
+
+
+! colors
+URxvt.background:                       [95]#000000
+URxvt.foreground:                       #A8A8A8
+URxvt.cursorColor:                      #6F4E37
+URxvt.cursorColor2:                     #C6C6C6
+URxvt.depth:                            32
+
+
+! fonts
+URxvt.font:                             xft:DejaVu Sans Mono:size=11.5:style=Regular
+URxvt.boldFont:
+URxvt.italicFont:
+URxvt.boldItalicFont:
+
+
+! buffer
+URxvt.saveLines:                        10000
+
+
+! line spaces
+URxvt.lineSpace:                        0
+
+
+! extensions
+URxvt.perl-ext:                         default,-selection,matcher
+
+
+! copy and paste
+URxvt.iso14755:                         false 
+URxvt.iso14755_52:                      false
+URxvt.keysym.Shift-Control-V:           eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:           eval:selection_to_clipboard
+
+
+! open url
+URxvt.url-launcher:                     /usr/bin/chromium
+URxvt.matcher.button:                   C-1
+URxvt.matcher.pattern.1:                \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:                \\B(/\\S+?):(\\d+)(?=:|$)
+
+
+! vim: ft=xdefaults
