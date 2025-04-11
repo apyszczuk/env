@@ -1,0 +1,179 @@
+v=""
+
+# groups
+v+="rs=0:"                      # reset to normal color
+v+="di=01;34:"                  # directory
+v+="ln=01;36:"                  # symbolic link
+v+="mh=00:"                     # regular file with more than one link
+v+="pi=40;33:"                  # named pipe
+v+="so=01;35:"                  # socket
+v+="do=01;35:"                  # door
+v+="bd=40;33;01:"               # block device
+v+="cd=40;33;01:"               # character device
+v+="or=40;31;01:"               # symbolic link to non-existent file
+v+="mi=00:"                     # 
+v+="su=37;41:"                  # file that is setuid (u+s)
+v+="sg=30;43:"                  # file that is setgid (g+s)
+v+="ca=00:"                     # file with capability
+v+="tw=30;42:"                  # directory that is sticky and other-writable (+t,o+w)
+v+="ow=34;42:"                  # directory that is not sticky other-writable (o+w)
+v+="st=37;44:"                  # directory that is sticky and not other-writable (+t)
+v+="ex=01;32:"                  # regular file with execute permission
+
+
+# extensions
+
+# archive
+v+="*.7z=01;31:"
+v+="*.ace=01;31:"
+v+="*.alz=01;31:"
+v+="*.apk=01;31:"
+v+="*.arc=01;31:"
+v+="*.arj=01;31:"
+v+="*.bz=01;31:"
+v+="*.bz2=01;31:"
+v+="*.cab=01;31:"
+v+="*.cpio=01;31:"
+v+="*.crate=01;31:"
+v+="*.deb=01;31:"
+v+="*.drpm=01;31:"
+v+="*.dwm=01;31:"
+v+="*.dz=01;31:"
+v+="*.ear=01;31:"
+v+="*.egg=01;31:"
+v+="*.esd=01;31:"
+v+="*.gz=01;31:"
+v+="*.jar=01;31:"
+v+="*.lha=01;31:"
+v+="*.lrz=01;31:"
+v+="*.lz=01;31:"
+v+="*.lz4=01;31:"
+v+="*.lzh=01;31:"
+v+="*.lzma=01;31:"
+v+="*.lzo=01;31:"
+v+="*.pyz=01;31:"
+v+="*.rar=01;31:"
+v+="*.rpm=01;31:"
+v+="*.rz=01;31:"
+v+="*.sar=01;31:"
+v+="*.swm=01;31:"
+v+="*.t7z=01;31:"
+v+="*.tar=01;31:"
+v+="*.taz=01;31:"
+v+="*.tbz=01;31:"
+v+="*.tbz2=01;31:"
+v+="*.tgz=01;31:"
+v+="*.tlz=01;31:"
+v+="*.txz=01;31:"
+v+="*.tz=01;31:"
+v+="*.tzo=01;31:"
+v+="*.tzst=01;31:"
+v+="*.udeb=01;31:"
+v+="*.war=01;31:"
+v+="*.whl=01;31:"
+v+="*.wim=01;31:"
+v+="*.xz=01;31:"
+v+="*.z=01;31:"
+v+="*.zip=01;31:"
+v+="*.zoo=01;31:"
+v+="*.zst=01;31:"
+
+# image
+v+="*.avif=01;35:"
+v+="*.jpg=01;35:"
+v+="*.jpeg=01;35:"
+v+="*.mjpg=01;35:"
+v+="*.mjpeg=01;35:"
+v+="*.gif=01;35:"
+v+="*.bmp=01;35:"
+v+="*.pbm=01;35:"
+v+="*.pgm=01;35:"
+v+="*.ppm=01;35:"
+v+="*.tga=01;35:"
+v+="*.xbm=01;35:"
+v+="*.xpm=01;35:"
+v+="*.tif=01;35:"
+v+="*.tiff=01;35:"
+v+="*.png=01;35:"
+v+="*.svg=01;35:"
+v+="*.svgz=01;35:"
+v+="*.mng=01;35:"
+v+="*.pcx=01;35:"
+v+="*.mov=01;35:"
+v+="*.mpg=01;35:"
+v+="*.mpeg=01;35:"
+v+="*.m2v=01;35:"
+v+="*.mkv=01;35:"
+v+="*.webm=01;35:"
+v+="*.webp=01;35:"
+v+="*.ogm=01;35:"
+v+="*.mp4=01;35:"
+v+="*.m4v=01;35:"
+v+="*.mp4v=01;35:"
+v+="*.vob=01;35:"
+v+="*.qt=01;35:"
+v+="*.nuv=01;35:"
+v+="*.wmv=01;35:"
+v+="*.asf=01;35:"
+v+="*.rm=01;35:"
+v+="*.rmvb=01;35:"
+v+="*.flc=01;35:"
+v+="*.avi=01;35:"
+v+="*.fli=01;35:"
+v+="*.flv=01;35:"
+v+="*.gl=01;35:"
+v+="*.dl=01;35:"
+v+="*.xcf=01;35:"
+v+="*.xwd=01;35:"
+v+="*.yuv=01;35:"
+v+="*.cgm=01;35:"
+v+="*.emf=01;35:"
+v+="*.ogv=01;35:"
+v+="*.ogx=01;35:"
+
+# audio
+v+="*.aac=00;36:"
+v+="*.au=00;36:"
+v+="*.flac=00;36:"
+v+="*.m4a=00;36:"
+v+="*.mid=00;36:"
+v+="*.midi=00;36:"
+v+="*.mka=00;36:"
+v+="*.mp3=00;36:"
+v+="*.mpc=00;36:"
+v+="*.ogg=00;36:"
+v+="*.ra=00;36:"
+v+="*.wav=00;36:"
+v+="*.oga=00;36:"
+v+="*.opus=00;36:"
+v+="*.spx=00;36:"
+v+="*.xspf=00;36:"
+
+# backup
+v+="*~=00;90:"
+v+="*#=00;90:"
+v+="*.bak=00;90:"
+v+="*.crdownload=00;90:"
+v+="*.dpkg-dist=00;90:"
+v+="*.dpkg-new=00;90:"
+v+="*.dpkg-old=00;90:"
+v+="*.dpkg-tmp=00;90:"
+v+="*.old=00;90:"
+v+="*.orig=00;90:"
+v+="*.part=00;90:"
+v+="*.rej=00;90:"
+v+="*.rpmnew=00;90:"
+v+="*.rpmorig=00;90:"
+v+="*.rpmsave=00;90:"
+v+="*.swp=00;90:"
+v+="*.tmp=00;90:"
+v+="*.ucf-dist=00;90:"
+v+="*.ucf-new=00;90:"
+v+="*.ucf-old=00;90:"
+
+
+LS_COLORS="$v"
+export LS_COLORS
+unset v
+
+# vim:ft=sh

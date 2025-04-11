@@ -26,6 +26,13 @@ alias gd='git diff'
 alias gds='git diff --staged'
 
 
+# DIR COLORS -----------------------------------------------------------------------------
+
+if [[ $PS1 && -f ~/.dircolors ]]; then
+    source ~/.dircolors
+fi
+
+
 # AUTO COMPLETION ------------------------------------------------------------------------
 
 if [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]]; then
