@@ -10,7 +10,7 @@ v=""
 
 # groups
 v+="rs=0:"                      # reset to normal color
-v+="di=01;34:"                  # directory
+v+="di=38;5;33:"                # directory
 v+="ln=01;36:"                  # symbolic link
 v+="mh=00:"                     # regular file with more than one link
 v+="pi=40;33:"                  # named pipe
