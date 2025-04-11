@@ -88,7 +88,7 @@ _clear_history_duplicates
 
 _color_white="01;37"
 _color_yellow="01;33"
-_color_blue="01;34"
+_color_blue="38;5;33"
 _color_red="01;31"
 _color_green="01;32"
 
