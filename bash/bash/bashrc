@@ -215,7 +215,23 @@ function _prompt()
     _print_in_color "$prompt_sign_color" " $ "
 }
 
-export PROMPT_COMMAND="export PS1=\$(_prompt)"
+function _prompt_save_cwd()
+{
+    if [ "$ENV_BASH_PROMPT_SAVE_CURRENT_WORKING_DIRECTORY" == "1" ]; then
+        pwd > "$HOME/.terminal-cwd"
+    fi
+}
+
+function _prompt_main()
+{
+    local tmp=""
+    tmp+="export PS1=\$(_prompt);"
+    tmp+="\$(_prompt_save_cwd);"
+
+    export PROMPT_COMMAND="$tmp"
+}
+
+_prompt_main
 
 
 # TERMINAL SETTINGS ----------------------------------------------------------------------
@@ -230,3 +246,4 @@ export ENV_BASH_PROMPT_GIT_STATUS=1
 export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_SUBMODULES=1
 export ENV_BASH_PROMPT_GIT_STATUS_IGNORE_UNTRACKED_FILES=0
 export ENV_BASH_PROMPT_LAST_COMMAND_STATUS=1
+export ENV_BASH_PROMPT_SAVE_CURRENT_WORKING_DIRECTORY=1
