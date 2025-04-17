@@ -108,6 +108,9 @@ bindsym $mod+Shift+r restart
 # lock screen
 bindsym $mod+Control+l exec --no-startup-id i3lock -n -c 000000
 
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
 # volume increase
 bindsym $mod+Shift+p exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
 
