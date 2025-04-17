@@ -68,6 +68,9 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+o focus child
 
+# toggle bar (hide, show)
+bindsym $mod+d bar mode toggle 
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
