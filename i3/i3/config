@@ -51,6 +51,7 @@ bindsym $mod+v split v
 
 # fullscreen 
 bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+Shift+g fullscreen toggle global
 
 # container layout
 bindsym $mod+e layout toggle split
