@@ -15,6 +15,17 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $wsr1 "11"
+set $wsr2 "12"
+set $wsr3 "13"
+set $wsr4 "14"
+set $wsr5 "15"
+set $wsr6 "16"
+set $wsr7 "17"
+set $wsr8 "18"
+set $wsr9 "19"
+set $wsr10 "20"
+
 # font
 font pango:DejaVu Sans Mono 12
 
