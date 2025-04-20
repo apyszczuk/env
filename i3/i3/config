@@ -36,6 +36,8 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+a focus parent
+bindsym $mod+o focus child
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -43,10 +45,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# horizontal split
+# splits
 bindsym $mod+semicolon split h
-
-# vertical split 
 bindsym $mod+v split v
 
 # fullscreen 
@@ -58,20 +58,16 @@ bindsym $mod+e layout toggle split
 
 # tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# tiling / floating focus
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-bindsym $mod+o focus child
-
-# toggle bar (hide, show)
+# toggle bar
 bindsym $mod+d bar mode toggle 
 
 # switch to workspace
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -83,11 +79,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# switch to workspace: next and previous
-bindsym $mod+n workspace next
-bindsym $mod+p workspace prev
-
-# move focused container to workspace
+# move container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2 workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3 workspace number $ws3
@@ -99,25 +91,28 @@ bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $w
 bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
+# disable focus based on mouse movement
+focus_follows_mouse no
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# volume
+bindsym $mod+Shift+p exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
+bindsym $mod+Shift+o exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
+bindsym $mod+Shift+i exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
 
 # lock screen
 bindsym $mod+Control+l exec --no-startup-id i3lock -n -c 000000
 
-# volume increase
-bindsym $mod+Shift+p exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
+# restart i3 / reload the configuration file
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
 
-# volume decrease
-bindsym $mod+Shift+o exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
+# gaps
+set $gaps_default 17
+gaps inner $gaps_default
+smart_gaps on
+smart_borders on
 
-# volume toggle
-bindsym $mod+Shift+i exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
-
-# define resize mode
+# resize mode
 mode "resize" {
     set $resize_size1 1
     bindsym h resize shrink width $resize_size1 px or $resize_size1 ppt
@@ -135,10 +130,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# enable resize mode
-bindsym $mod+r mode "resize"
-
-# define apps mode
+# apps mode
 mode "apps" {
     bindsym c workspace $ws1; exec chromium; mode "default"
     bindsym s workspace $ws2; exec chromium --app=http://open.spotify.com; mode "default"
@@ -150,13 +142,27 @@ mode "apps" {
     bindsym Escape mode "default"
 }
 
-# enable apps mode
+# gaps mode
+mode "gaps" {
+    bindsym 0 exec "i3-msg gaps inner current set 0"; mode "default"
+    bindsym 9 exec "i3-msg gaps inner current set $gaps_default"; mode "default"
+    bindsym 8 exec "i3-msg gaps inner current plus 2"
+    bindsym 7 exec "i3-msg gaps inner current minus 2"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# modes
+bindsym $mod+r mode "resize"
 bindsym $mod+q mode "apps"
+bindsym $mod+g mode "gaps"
+
 
 # print screen
 bindsym Print exec --no-startup-id scrot
 
-# define bar
+# bar
 bar {
     strip_workspace_numbers yes
     position bottom
@@ -170,34 +176,12 @@ bar {
     }
 }
 
-# window border 1 px
+# window border
 for_window [class=".*"] border pixel 1
 
-# gaps
-set $gaps_default 17
-gaps inner $gaps_default
-smart_gaps on
-smart_borders on
 
-# define gaps mode
-mode "gaps" {
-    bindsym 0 exec "i3-msg gaps inner current set 0"; mode "default"
-    bindsym 9 exec "i3-msg gaps inner current set $gaps_default"; mode "default"
-    bindsym 8 exec "i3-msg gaps inner current plus 2"
-    bindsym 7 exec "i3-msg gaps inner current minus 2"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 
-# enable gaps mode
-bindsym $mod+g mode "gaps"
-
-# disable focus based on mouse movement
-focus_follows_mouse no
-
-# go back and forth easily
-bindsym $mod+Tab workspace back_and_forth
 
 # colors
 # class                 border  backgr. text    indicator child_border
