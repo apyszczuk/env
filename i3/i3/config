@@ -1,9 +1,10 @@
 # i3 config file (v4)
 
-# modifier
+# MODIFIER -------------------------------------------------------------------------------
 set $mod Mod1
 
-# workspaces
+
+# WORKSPACES -----------------------------------------------------------------------------
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -15,23 +16,29 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# font
+
+# FONT -----------------------------------------------------------------------------------
 font pango:DejaVu Sans Mono 12
 
-# floating window modifier
+
+# FLOATING MODIFIER ----------------------------------------------------------------------
 floating_modifier $mod
 
-# open terminal
+
+# TERMINAL -------------------------------------------------------------------------------
 bindsym $mod+m exec urxvt
 bindsym $mod+Shift+m exec sh ~/.config/i3/scripts/urxvtp.sh
 
-# kill window
+
+# KILL WINDOW ----------------------------------------------------------------------------
 bindsym $mod+Shift+q kill
 
-# start launcher
+
+# LAUNCHER -------------------------------------------------------------------------------
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
-# focus
+
+# FOCUS ----------------------------------------------------------------------------------
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -39,31 +46,38 @@ bindsym $mod+l focus right
 bindsym $mod+a focus parent
 bindsym $mod+o focus child
 
-# move focused window
+
+# MOVE WINDOW ----------------------------------------------------------------------------
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# splits
+
+# SPLITS ---------------------------------------------------------------------------------
 bindsym $mod+semicolon split h
 bindsym $mod+v split v
 
-# fullscreen 
+
+# FULLSCREEN -----------------------------------------------------------------------------
 bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+Shift+g fullscreen toggle global
 
-# container layout
+
+# LAYOUT ---------------------------------------------------------------------------------
 bindsym $mod+e layout toggle split
 
-# tiling / floating
+
+# FLOATING -------------------------------------------------------------------------------
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-# toggle bar
+
+# TOGGLE BAR -----------------------------------------------------------------------------
 bindsym $mod+d bar mode toggle 
 
-# switch to workspace
+
+# SWITCH TO WORKSPACE --------------------------------------------------------------------
 bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
 bindsym $mod+Tab workspace back_and_forth
@@ -79,7 +93,8 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move container to workspace
+
+# MOVE TO WORKSPACE ----------------------------------------------------------------------
 bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2 workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3 workspace number $ws3
@@ -91,28 +106,38 @@ bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $w
 bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
 
-# disable focus based on mouse movement
+
+# MOUSE MOVEMENT FOCUS -------------------------------------------------------------------
 focus_follows_mouse no
 
-# volume
+
+# VOLUME ---------------------------------------------------------------------------------
 bindsym $mod+Shift+p exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
 bindsym $mod+Shift+o exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
 bindsym $mod+Shift+i exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
 
-# lock screen
-bindsym $mod+Control+l exec --no-startup-id i3lock -n -c 000000
 
-# restart i3 / reload the configuration file
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+c reload
-
-# gaps
+# GAPS -----------------------------------------------------------------------------------
 set $gaps_default 17
 gaps inner $gaps_default
 smart_gaps on
 smart_borders on
 
-# resize mode
+
+# PRINT SCREEN ---------------------------------------------------------------------------
+bindsym Print exec --no-startup-id scrot
+
+
+# SCREEN LOCK ----------------------------------------------------------------------------
+bindsym $mod+Control+l exec --no-startup-id i3lock -n -c 000000
+
+
+# MAINTENANCE ----------------------------------------------------------------------------
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+
+
+# MODES ----------------------------------------------------------------------------------
 mode "resize" {
     set $resize_size1 1
     bindsym h resize shrink width $resize_size1 px or $resize_size1 ppt
@@ -130,7 +155,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# apps mode
 mode "apps" {
     bindsym c workspace $ws1; exec chromium; mode "default"
     bindsym s workspace $ws2; exec chromium --app=http://open.spotify.com; mode "default"
@@ -142,7 +166,6 @@ mode "apps" {
     bindsym Escape mode "default"
 }
 
-# gaps mode
 mode "gaps" {
     bindsym 0 exec "i3-msg gaps inner current set 0"; mode "default"
     bindsym 9 exec "i3-msg gaps inner current set $gaps_default"; mode "default"
@@ -153,16 +176,12 @@ mode "gaps" {
     bindsym Escape mode "default"
 }
 
-# modes
 bindsym $mod+r mode "resize"
 bindsym $mod+q mode "apps"
 bindsym $mod+g mode "gaps"
 
 
-# print screen
-bindsym Print exec --no-startup-id scrot
-
-# bar
+# BARS -----------------------------------------------------------------------------------
 bar {
     strip_workspace_numbers yes
     position bottom
@@ -176,14 +195,12 @@ bar {
     }
 }
 
-# window border
+
+# WINDOWS PROPERTIES ---------------------------------------------------------------------
 for_window [class=".*"] border pixel 1
 
 
-
-
-
-# colors
+# COLORS ---------------------------------------------------------------------------------
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #2279ab
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #474747
