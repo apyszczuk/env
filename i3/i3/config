@@ -1,210 +1,212 @@
 # i3 config file (v4)
 
-# MODIFIER -------------------------------------------------------------------------------
-set $mod Mod1
+# MODIFIER -----------------------------------------------------------------------------------------
+set $mod                        Mod1
 
 
-# WORKSPACES -----------------------------------------------------------------------------
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+# WORKSPACES ---------------------------------------------------------------------------------------
+set $ws1                        "1"
+set $ws2                        "2"
+set $ws3                        "3"
+set $ws4                        "4"
+set $ws5                        "5"
+set $ws6                        "6"
+set $ws7                        "7"
+set $ws8                        "8"
+set $ws9                        "9"
+set $ws10                       "10"
 
 
-# FONT -----------------------------------------------------------------------------------
-font pango:DejaVu Sans Mono 12
+# FONT ---------------------------------------------------------------------------------------------
+font                            pango:DejaVu Sans Mono 12
 
 
-# FLOATING MODIFIER ----------------------------------------------------------------------
+# FLOATING MODIFIER --------------------------------------------------------------------------------
 floating_modifier $mod
 
 
-# TERMINAL -------------------------------------------------------------------------------
-bindsym $mod+m exec urxvt
-bindsym $mod+Shift+m exec sh ~/.config/i3/scripts/urxvtp.sh
+# TERMINAL -----------------------------------------------------------------------------------------
+bindsym $mod+m                  exec urxvt
+bindsym $mod+Shift+m            exec sh ~/.config/i3/scripts/urxvtp.sh
 
 
-# KILL WINDOW ----------------------------------------------------------------------------
-bindsym $mod+Shift+q kill
+# KILL WINDOW --------------------------------------------------------------------------------------
+bindsym $mod+Shift+q            kill
 
 
-# LAUNCHER -------------------------------------------------------------------------------
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+# LAUNCHER -----------------------------------------------------------------------------------------
+bindsym $mod+Shift+d            exec --no-startup-id i3-dmenu-desktop
 
 
-# FOCUS ----------------------------------------------------------------------------------
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+a focus parent
-bindsym $mod+o focus child
+# FOCUS --------------------------------------------------------------------------------------------
+bindsym $mod+h                  focus left
+bindsym $mod+j                  focus down
+bindsym $mod+k                  focus up
+bindsym $mod+l                  focus right
+bindsym $mod+a                  focus parent
+bindsym $mod+o                  focus child
 
 
-# MOVE WINDOW ----------------------------------------------------------------------------
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+# MOVE WINDOW --------------------------------------------------------------------------------------
+bindsym $mod+Shift+h            move left
+bindsym $mod+Shift+j            move down
+bindsym $mod+Shift+k            move up
+bindsym $mod+Shift+l            move right
 
 
-# SPLITS ---------------------------------------------------------------------------------
-bindsym $mod+semicolon split h
-bindsym $mod+v split v
+# SPLITS -------------------------------------------------------------------------------------------
+bindsym $mod+semicolon          split h
+bindsym $mod+v                  split v
 
 
-# FULLSCREEN -----------------------------------------------------------------------------
-bindsym $mod+Shift+f fullscreen toggle
-bindsym $mod+Shift+g fullscreen toggle global
+# FULLSCREEN ---------------------------------------------------------------------------------------
+bindsym $mod+Shift+f            fullscreen toggle
+bindsym $mod+Shift+g            fullscreen toggle global
 
 
-# LAYOUT ---------------------------------------------------------------------------------
-bindsym $mod+e layout toggle split
+# LAYOUT -------------------------------------------------------------------------------------------
+bindsym $mod+e                  layout toggle split
 
 
-# FLOATING -------------------------------------------------------------------------------
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+# FLOATING -----------------------------------------------------------------------------------------
+bindsym $mod+Shift+space        floating toggle
+bindsym $mod+space              focus mode_toggle
 
 
-# TOGGLE BAR -----------------------------------------------------------------------------
-bindsym $mod+d bar mode toggle 
+# TOGGLE BAR ---------------------------------------------------------------------------------------
+bindsym $mod+d                  bar mode toggle 
 
 
-# SWITCH TO WORKSPACE --------------------------------------------------------------------
-bindsym $mod+n workspace next
-bindsym $mod+p workspace prev
-bindsym $mod+Tab workspace back_and_forth
+# SWITCH TO WORKSPACE ------------------------------------------------------------------------------
+bindsym $mod+n                  workspace next
+bindsym $mod+p                  workspace prev
+bindsym $mod+Tab                workspace back_and_forth
 
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-
-
-# MOVE TO WORKSPACE ----------------------------------------------------------------------
-bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2 workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3 workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4 workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5 workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6 workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7 workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
+bindsym $mod+1                  workspace number $ws1
+bindsym $mod+2                  workspace number $ws2
+bindsym $mod+3                  workspace number $ws3
+bindsym $mod+4                  workspace number $ws4
+bindsym $mod+5                  workspace number $ws5
+bindsym $mod+6                  workspace number $ws6
+bindsym $mod+7                  workspace number $ws7
+bindsym $mod+8                  workspace number $ws8
+bindsym $mod+9                  workspace number $ws9
+bindsym $mod+0                  workspace number $ws10
 
 
-# MOUSE MOVEMENT FOCUS -------------------------------------------------------------------
-focus_follows_mouse no
+# MOVE TO WORKSPACE --------------------------------------------------------------------------------
+bindsym $mod+Shift+1            move container to workspace number $ws1 workspace number $ws1
+bindsym $mod+Shift+2            move container to workspace number $ws2 workspace number $ws2
+bindsym $mod+Shift+3            move container to workspace number $ws3 workspace number $ws3
+bindsym $mod+Shift+4            move container to workspace number $ws4 workspace number $ws4
+bindsym $mod+Shift+5            move container to workspace number $ws5 workspace number $ws5
+bindsym $mod+Shift+6            move container to workspace number $ws6 workspace number $ws6
+bindsym $mod+Shift+7            move container to workspace number $ws7 workspace number $ws7
+bindsym $mod+Shift+8            move container to workspace number $ws8 workspace number $ws8
+bindsym $mod+Shift+9            move container to workspace number $ws9 workspace number $ws9
+bindsym $mod+Shift+0            move container to workspace number $ws10 workspace number $ws10
 
 
-# VOLUME ---------------------------------------------------------------------------------
-bindsym $mod+Shift+p exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
-bindsym $mod+Shift+o exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
-bindsym $mod+Shift+i exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
+# MOUSE MOVEMENT FOCUS -----------------------------------------------------------------------------
+focus_follows_mouse             no
 
 
-# GAPS -----------------------------------------------------------------------------------
-set $gaps_default 17
-gaps inner $gaps_default
-smart_gaps on
-smart_borders on
+# VOLUME -------------------------------------------------------------------------------------------
+bindsym $mod+Shift+p            exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
+bindsym $mod+Shift+o            exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
+bindsym $mod+Shift+i            exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
 
 
-# PRINT SCREEN ---------------------------------------------------------------------------
-bindsym Print exec --no-startup-id scrot
+# GAPS ---------------------------------------------------------------------------------------------
+set $gaps_default               17
+gaps inner                      $gaps_default
+smart_gaps                      on
+smart_borders                   on
 
 
-# SCREEN LOCK ----------------------------------------------------------------------------
-bindsym $mod+Control+l exec --no-startup-id i3lock -n -c 000000
+# PRINT SCREEN -------------------------------------------------------------------------------------
+bindsym Print                   exec --no-startup-id scrot
 
 
-# MAINTENANCE ----------------------------------------------------------------------------
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+c reload
+# SCREEN LOCK --------------------------------------------------------------------------------------
+bindsym $mod+Control+l          exec --no-startup-id i3lock -n -c 000000
 
 
-# MODES ----------------------------------------------------------------------------------
+# MAINTENANCE --------------------------------------------------------------------------------------
+bindsym $mod+Shift+r            restart
+bindsym $mod+Shift+c            reload
+
+
+# MODES --------------------------------------------------------------------------------------------
 mode "resize" {
-    set $resize_size1 1
-    bindsym h resize shrink width $resize_size1 px or $resize_size1 ppt
-    bindsym j resize grow height $resize_size1 px or $resize_size1 ppt
-    bindsym k resize shrink height $resize_size1 px or $resize_size1 ppt
-    bindsym l resize grow width $resize_size1 px or $resize_size1 ppt
+    set $sz1 1
+    set $sz2 10
 
-    set $resize_size2 10
-    bindsym Shift+h resize shrink width $resize_size2 px or $resize_size2 ppt
-    bindsym Shift+j resize grow height $resize_size2 px or $resize_size2 ppt
-    bindsym Shift+k resize shrink height $resize_size2 px or $resize_size2 ppt
-    bindsym Shift+l resize grow width $resize_size2 px or $resize_size2 ppt
+    bindsym h           resize shrink width $sz1 px or $sz1 ppt
+    bindsym j           resize grow height $sz1 px or $sz1 ppt
+    bindsym k           resize shrink height $sz1 px or $sz1 ppt
+    bindsym l           resize grow width $sz1 px or $sz1 ppt
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Shift+h     resize shrink width $sz2 px or $sz2 ppt
+    bindsym Shift+j     resize grow height $sz2 px or $sz2 ppt
+    bindsym Shift+k     resize shrink height $sz2 px or $sz2 ppt
+    bindsym Shift+l     resize grow width $sz2 px or $sz2 ppt
+
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
 }
 
 mode "apps" {
-    bindsym c workspace $ws1; exec chromium; mode "default"
-    bindsym s workspace $ws2; exec chromium --app=http://open.spotify.com; mode "default"
-    bindsym b exec chromium --app=http://drive.google.com; mode "default"
-    bindsym t exec chromium --app=http://translate.google.com; mode "default"
-    bindsym Shift+p exec systemctl poweroff; mode "default"
+    bindsym c           workspace $ws1; exec chromium; mode "default"
+    bindsym s           workspace $ws2; exec chromium --app=http://open.spotify.com; mode "default"
+    bindsym b           exec chromium --app=http://drive.google.com; mode "default"
+    bindsym t           exec chromium --app=http://translate.google.com; mode "default"
+    bindsym Shift+p     exec systemctl poweroff; mode "default"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
 }
 
 mode "gaps" {
-    bindsym 0 exec "i3-msg gaps inner current set 0"; mode "default"
-    bindsym 9 exec "i3-msg gaps inner current set $gaps_default"; mode "default"
-    bindsym 8 exec "i3-msg gaps inner current plus 2"
-    bindsym 7 exec "i3-msg gaps inner current minus 2"
+    bindsym 0           exec "i3-msg gaps inner current set 0"; mode "default"
+    bindsym 9           exec "i3-msg gaps inner current set $gaps_default"; mode "default"
+    bindsym 8           exec "i3-msg gaps inner current plus 2"
+    bindsym 7           exec "i3-msg gaps inner current minus 2"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
 }
 
-bindsym $mod+r mode "resize"
-bindsym $mod+q mode "apps"
-bindsym $mod+g mode "gaps"
+bindsym $mod+r                  mode "resize"
+bindsym $mod+q                  mode "apps"
+bindsym $mod+g                  mode "gaps"
 
 
-# BARS -----------------------------------------------------------------------------------
+# BARS ---------------------------------------------------------------------------------------------
 bar {
-    strip_workspace_numbers yes
-    position bottom
-    tray_output none
-    workspace_min_width 25
-    i3bar_command i3bar --transparency
-    status_command i3blocks
-    font pango:DejaVu Sans Mono, Icons 12
-    colors {
-        background #151515FF
-    }
+    strip_workspace_numbers     yes
+    position                    bottom
+    tray_output                 none
+    workspace_min_width         25
+    i3bar_command               i3bar --transparency
+    status_command              i3blocks
+    font                        pango:DejaVu Sans Mono, Icons 12
+    colors                      { background #151515FF }
 }
 
 
-# WINDOWS PROPERTIES ---------------------------------------------------------------------
+# WINDOWS PROPERTIES -------------------------------------------------------------------------------
 for_window [class=".*"] border pixel 1
 
 
-# COLORS ---------------------------------------------------------------------------------
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #2279ab
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #474747
-client.unfocused        #333333 #222222 #888888 #292d2e   #303030
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #ffffff
+# COLORS -------------------------------------------------------------------------------------------
+# class                     border      bg          text        indicator   child_border
+client.focused              #4c7899     #285577     #ffffff     #2e9ef4     #2279ab
+client.focused_inactive     #333333     #5f676a     #ffffff     #484e50     #474747
+client.unfocused            #333333     #222222     #888888     #292d2e     #303030
+client.urgent               #2f343a     #900000     #ffffff     #900000     #900000
+client.placeholder          #000000     #0c0c0c     #ffffff     #000000     #0c0c0c
+client.background           #ffffff
+
+
+# vim:cc=100
