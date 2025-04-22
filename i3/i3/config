@@ -247,6 +247,8 @@ bindsym $mod+g                  mode "gaps"
 
 
 # BARS ---------------------------------------------------------------------------------------------
+set $bar_font                   pango:DejaVu Sans Mono, Icons 12
+
 bar {
     output                      $out1
     strip_workspace_numbers     yes
@@ -255,7 +257,7 @@ bar {
     workspace_min_width         25
     i3bar_command               i3bar --transparency
     status_command              $i3blocks
-    font                        pango:DejaVu Sans Mono, Icons 12
+    font                        $bar_font
     colors                      { background #151515FF }
 }
 
