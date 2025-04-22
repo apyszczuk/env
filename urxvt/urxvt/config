@@ -46,7 +46,7 @@ URxvt.keysym.Shift-Control-C:           eval:selection_to_clipboard
 
 
 ! open url
-URxvt.url-launcher:                     /usr/bin/chromium
+URxvt.url-launcher:                     /usr/bin/chromium-browser
 URxvt.matcher.button:                   C-1
 URxvt.matcher.pattern.1:                \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 URxvt.matcher.pattern.2:                \\B(/\\S+?):(\\d+)(?=:|$)
