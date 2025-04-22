@@ -32,6 +32,31 @@ set $ws18                       "18"
 set $ws19                       "19"
 set $ws20                       "20"
 
+set $out1                       "DisplayPort-0"
+set $out2                       "DisplayPort-0"
+
+workspace                       $ws1 output $out1
+workspace                       $ws2 output $out1
+workspace                       $ws3 output $out1
+workspace                       $ws4 output $out1
+workspace                       $ws5 output $out1
+workspace                       $ws6 output $out1
+workspace                       $ws7 output $out1
+workspace                       $ws8 output $out1
+workspace                       $ws9 output $out1
+workspace                       $ws10 output $out1
+
+workspace                       $ws11 output $out2
+workspace                       $ws12 output $out2
+workspace                       $ws13 output $out2
+workspace                       $ws14 output $out2
+workspace                       $ws15 output $out2
+workspace                       $ws16 output $out2
+workspace                       $ws17 output $out2
+workspace                       $ws18 output $out2
+workspace                       $ws19 output $out2
+workspace                       $ws20 output $out2
+
 
 # FONT ---------------------------------------------------------------------------------------------
 font                            pango:DejaVu Sans Mono 12
