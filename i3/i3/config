@@ -1,5 +1,9 @@
 # i3 config file (v4)
 
+# VARIABLES ----------------------------------------------------------------------------------------
+set $browser                    /usr/bin/chromium
+
+
 # MODIFIER -----------------------------------------------------------------------------------------
 set $mod                        Mod1
 
@@ -191,10 +195,10 @@ mode "resize" {
 }
 
 mode "apps" {
-    bindsym c           workspace $ws1; exec chromium; mode "default"
-    bindsym s           workspace $ws2; exec chromium --app=http://open.spotify.com; mode "default"
-    bindsym b           exec chromium --app=http://drive.google.com; mode "default"
-    bindsym t           exec chromium --app=http://translate.google.com; mode "default"
+    bindsym c           workspace $ws1; exec $browser; mode "default"
+    bindsym s           workspace $ws2; exec $browser --app=http://open.spotify.com; mode "default"
+    bindsym b           exec $browser --app=http://drive.google.com; mode "default"
+    bindsym t           exec $browser --app=http://translate.google.com; mode "default"
     bindsym Shift+p     exec systemctl poweroff; mode "default"
 
     bindsym Return      mode "default"
