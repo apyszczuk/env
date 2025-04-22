@@ -1,7 +1,7 @@
 [bandwidth_down]
 command=./bandwidth/bandwidth.sh
 interval=1
-IFNAME=eno1
+IFNAME=ens224
 DIRECTION=rx
 UNITS=metric
 ICON=
@@ -11,7 +11,7 @@ min_width=XXX999.99KB/s|9.99GB
 [bandwidth_up]
 command=./bandwidth/bandwidth.sh
 interval=1
-IFNAME=eno1
+IFNAME=ens224
 DIRECTION=tx
 UNITS=metric
 ICON=
@@ -20,7 +20,7 @@ min_width=XXX999.99KB/s|9.99GB
 
 [local_ip]
 command=./local_ip/local_ip.sh
-IFNAME=eno1
+IFNAME=ens224
 interval=once
 
 
