@@ -34,14 +34,14 @@ min_width=XXX8192MB(99%)
 [root]
 command=./disk/disk.sh
 HIGH_LEVEL=90
-DISK_NAME=/dev/sda2
+DISK_NAME=/dev/mapper/rhel-root
 interval=10
 
 
-[storage]
+[home]
 command=./disk/disk.sh
 HIGH_LEVEL=90
-DISK_NAME=/dev/sda3
+DISK_NAME=/dev/mapper/rhel-home
 interval=10
 
 
