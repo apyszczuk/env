@@ -248,6 +248,7 @@ bindsym $mod+g                  mode "gaps"
 
 # BARS ---------------------------------------------------------------------------------------------
 bar {
+    output                      $out1
     strip_workspace_numbers     yes
     position                    bottom
     tray_output                 none
