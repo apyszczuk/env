@@ -168,6 +168,7 @@ bindsym $mod+Control+l          exec --no-startup-id i3lock -n -c 000000
 # MAINTENANCE --------------------------------------------------------------------------------------
 bindsym $mod+Shift+r            restart
 bindsym $mod+Shift+c            reload
+bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
 
 
 # MODES --------------------------------------------------------------------------------------------
