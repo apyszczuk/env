@@ -2,6 +2,7 @@
 
 # VARIABLES ----------------------------------------------------------------------------------------
 set $browser                    /usr/bin/chromium
+set $i3blocks                   /usr/bin/i3blocks
 
 
 # MODIFIER -----------------------------------------------------------------------------------------
@@ -227,7 +228,7 @@ bar {
     tray_output                 none
     workspace_min_width         25
     i3bar_command               i3bar --transparency
-    status_command              i3blocks
+    status_command              $i3blocks
     font                        pango:DejaVu Sans Mono, Icons 12
     colors                      { background #151515FF }
 }
