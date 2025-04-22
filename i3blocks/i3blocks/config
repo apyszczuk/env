@@ -31,14 +31,14 @@ interval=1
 min_width=XXX8192MB(99%)
 
 
-[sda2]
+[root]
 command=./disk/disk.sh
 HIGH_LEVEL=90
 DISK_NAME=/dev/sda2
 interval=10
 
 
-[sda3]
+[storage]
 command=./disk/disk.sh
 HIGH_LEVEL=90
 DISK_NAME=/dev/sda3
