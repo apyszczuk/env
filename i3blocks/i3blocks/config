@@ -55,17 +55,6 @@ command=./loadavg/loadavg.sh
 interval=10
 
 
-[volume]
-command=./volume/volume.sh
-INCREASE_BUTTON=4
-DECREASE_BUTTON=5
-MUTE_BUTTON=2
-STEP_VALUE=3
-interval=persist
-min_width=OFF 100%
-align=center
-
-
 [date_and_time]
 command=./date/date.sh
 FORMAT=%a %F %H:%M
