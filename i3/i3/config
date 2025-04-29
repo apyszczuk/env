@@ -6,6 +6,29 @@ set $browser                    /usr/bin/chromium
 set $i3blocks                   /usr/bin/i3blocks
 
 
+# FONT ---------------------------------------------------------------------------------------------
+font                            pango:DejaVu Sans Mono 12
+
+
+# TERMINAL -----------------------------------------------------------------------------------------
+bindsym $mod+m                  exec urxvt
+bindsym $mod+Shift+m            exec sh ~/.config/i3/scripts/urxvtp.sh
+
+
+# LAUNCHER -----------------------------------------------------------------------------------------
+bindsym $mod+Shift+d            exec --no-startup-id i3-dmenu-desktop
+
+
+# SCREEN LOCK --------------------------------------------------------------------------------------
+bindsym $mod+Control+l          exec --no-startup-id i3lock -n -c 000000
+
+
+# MAINTENANCE --------------------------------------------------------------------------------------
+bindsym $mod+Shift+r            restart
+bindsym $mod+Shift+c            reload
+bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+
+
 # WORKSPACES ---------------------------------------------------------------------------------------
 
 # variables
@@ -111,19 +134,6 @@ bindsym $mod+Control+Shift+9    move container to workspace number $ws19 workspa
 bindsym $mod+Control+Shift+0    move container to workspace number $ws20 workspace number $ws20
 
 
-# FONT ---------------------------------------------------------------------------------------------
-font                            pango:DejaVu Sans Mono 12
-
-
-# TERMINAL -----------------------------------------------------------------------------------------
-bindsym $mod+m                  exec urxvt
-bindsym $mod+Shift+m            exec sh ~/.config/i3/scripts/urxvtp.sh
-
-
-# LAUNCHER -----------------------------------------------------------------------------------------
-bindsym $mod+Shift+d            exec --no-startup-id i3-dmenu-desktop
-
-
 # WINDOWS ------------------------------------------------------------------------------------------
 
 # windows properties
@@ -195,16 +205,6 @@ bindsym $mod+Shift+i            exec --no-startup-id sh ~/.config/i3/scripts/vol
 
 # PRINT SCREEN -------------------------------------------------------------------------------------
 bindsym Print                   exec --no-startup-id scrot
-
-
-# SCREEN LOCK --------------------------------------------------------------------------------------
-bindsym $mod+Control+l          exec --no-startup-id i3lock -n -c 000000
-
-
-# MAINTENANCE --------------------------------------------------------------------------------------
-bindsym $mod+Shift+r            restart
-bindsym $mod+Shift+c            reload
-bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
 
 
 # MODES --------------------------------------------------------------------------------------------
