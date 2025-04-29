@@ -191,10 +191,24 @@ focus_follows_mouse             no
 bindsym $mod+Shift+q            kill
 
 
-# TOGGLE BAR ---------------------------------------------------------------------------------------
+# BARS ---------------------------------------------------------------------------------------------
+set $bar_font                   pango:DejaVu Sans Mono, Icons 12
+
+bar {
+    output                      $out1
+    strip_workspace_numbers     yes
+    position                    bottom
+    tray_output                 none
+    workspace_min_width         25
+    i3bar_command               i3bar --transparency
+    status_command              $i3blocks
+    font                        $bar_font
+    colors                      { background #151515FF }
+}
+
+
+# toggle bar
 bindsym $mod+d                  bar mode toggle 
-
-
 
 
 # VOLUME -------------------------------------------------------------------------------------------
@@ -250,22 +264,6 @@ mode "gaps" {
 bindsym $mod+r                  mode "resize"
 bindsym $mod+q                  mode "apps"
 bindsym $mod+g                  mode "gaps"
-
-
-# BARS ---------------------------------------------------------------------------------------------
-set $bar_font                   pango:DejaVu Sans Mono, Icons 12
-
-bar {
-    output                      $out1
-    strip_workspace_numbers     yes
-    position                    bottom
-    tray_output                 none
-    workspace_min_width         25
-    i3bar_command               i3bar --transparency
-    status_command              $i3blocks
-    font                        $bar_font
-    colors                      { background #151515FF }
-}
 
 
 # COLORS -------------------------------------------------------------------------------------------
