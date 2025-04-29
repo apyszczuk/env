@@ -115,24 +115,22 @@ bindsym $mod+Control+Shift+0    move container to workspace number $ws20 workspa
 font                            pango:DejaVu Sans Mono 12
 
 
-# FLOATING MODIFIER --------------------------------------------------------------------------------
-floating_modifier $mod
-
-
 # TERMINAL -----------------------------------------------------------------------------------------
 bindsym $mod+m                  exec urxvt
 bindsym $mod+Shift+m            exec sh ~/.config/i3/scripts/urxvtp.sh
-
-
-# KILL WINDOW --------------------------------------------------------------------------------------
-bindsym $mod+Shift+q            kill
 
 
 # LAUNCHER -----------------------------------------------------------------------------------------
 bindsym $mod+Shift+d            exec --no-startup-id i3-dmenu-desktop
 
 
-# FOCUS --------------------------------------------------------------------------------------------
+# WINDOWS ------------------------------------------------------------------------------------------
+
+# windows properties
+for_window [class=".*"]         border pixel 1
+
+
+# focus window
 bindsym $mod+h                  focus left
 bindsym $mod+j                  focus down
 bindsym $mod+k                  focus up
@@ -141,51 +139,58 @@ bindsym $mod+a                  focus parent
 bindsym $mod+o                  focus child
 
 
-# MOVE WINDOW --------------------------------------------------------------------------------------
+# move window
 bindsym $mod+Shift+h            move left
 bindsym $mod+Shift+j            move down
 bindsym $mod+Shift+k            move up
 bindsym $mod+Shift+l            move right
 
 
-# SPLITS -------------------------------------------------------------------------------------------
+# split types
 bindsym $mod+semicolon          split h
 bindsym $mod+v                  split v
 
 
-# FULLSCREEN ---------------------------------------------------------------------------------------
+# fullscreen window
 bindsym $mod+Shift+f            fullscreen toggle
 bindsym $mod+Shift+g            fullscreen toggle global
 
 
-# LAYOUT -------------------------------------------------------------------------------------------
+# layout
 bindsym $mod+e                  layout toggle split
 
 
-# FLOATING -----------------------------------------------------------------------------------------
+# gaps
+set $gaps_default               17
+gaps inner                      $gaps_default
+smart_gaps                      on
+smart_borders                   on
+
+
+# floating
+floating_modifier               $mod
 bindsym $mod+Shift+space        floating toggle
 bindsym $mod+space              focus mode_toggle
+
+
+# mouse movement focus
+focus_follows_mouse             no
+
+
+# kill window
+bindsym $mod+Shift+q            kill
 
 
 # TOGGLE BAR ---------------------------------------------------------------------------------------
 bindsym $mod+d                  bar mode toggle 
 
 
-# MOUSE MOVEMENT FOCUS -----------------------------------------------------------------------------
-focus_follows_mouse             no
 
 
 # VOLUME -------------------------------------------------------------------------------------------
 bindsym $mod+Shift+p            exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
 bindsym $mod+Shift+o            exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
 bindsym $mod+Shift+i            exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
-
-
-# GAPS ---------------------------------------------------------------------------------------------
-set $gaps_default               17
-gaps inner                      $gaps_default
-smart_gaps                      on
-smart_borders                   on
 
 
 # PRINT SCREEN -------------------------------------------------------------------------------------
@@ -261,10 +266,6 @@ bar {
     font                        $bar_font
     colors                      { background #151515FF }
 }
-
-
-# WINDOWS PROPERTIES -------------------------------------------------------------------------------
-for_window [class=".*"] border pixel 1
 
 
 # COLORS -------------------------------------------------------------------------------------------
