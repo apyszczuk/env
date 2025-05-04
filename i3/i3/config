@@ -186,10 +186,6 @@ bar {
 bindsym $mod+d                  bar mode toggle 
 
 
-# PRINT SCREEN -------------------------------------------------------------------------------------
-bindsym Print                   exec --no-startup-id scrot
-
-
 # MODES --------------------------------------------------------------------------------------------
 mode "resize" {
     set $sz1 1
@@ -239,11 +235,19 @@ mode "volume" {
     bindsym Escape      mode "default"
 }
 
+mode "print-screen" {
+    bindsym p           exec --no-startup-id scrot; mode "default"
+
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
+}
+
 mode "mode-selection" {
     bindsym r           mode "resize"
     bindsym q           mode "apps"
     bindsym g           mode "gaps"
     bindsym v           mode "volume"
+    bindsym p           mode "print-screen"
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
