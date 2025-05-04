@@ -20,7 +20,6 @@ bindsym $mod+Shift+d            exec --no-startup-id i3-dmenu-desktop
 
 
 # WORKSPACES ---------------------------------------------------------------------------------------
-
 # variables
 set $ws1                        "1"
 set $ws2                        "2"
@@ -47,7 +46,6 @@ set $ws20                       "20"
 set $out1                       "DisplayPort-0"
 set $out2                       "DisplayPort-0"
 
-
 # bind workspace to output
 workspace                       $ws1 output $out1
 workspace                       $ws2 output $out1
@@ -70,7 +68,6 @@ workspace                       $ws17 output $out2
 workspace                       $ws18 output $out2
 workspace                       $ws19 output $out2
 workspace                       $ws20 output $out2
-
 
 # switch to workspace
 bindsym $mod+n                  workspace next
@@ -99,7 +96,6 @@ bindsym $mod+Control+8          workspace number $ws18
 bindsym $mod+Control+9          workspace number $ws19
 bindsym $mod+Control+0          workspace number $ws20
 
-
 # move container to workspace
 bindsym $mod+Shift+1            move container to workspace number $ws1 workspace number $ws1
 bindsym $mod+Shift+2            move container to workspace number $ws2 workspace number $ws2
@@ -125,10 +121,8 @@ bindsym $mod+Control+Shift+0    move container to workspace number $ws20 workspa
 
 
 # WINDOWS ------------------------------------------------------------------------------------------
-
 # windows properties
 for_window [class=".*"]         border pixel 1
-
 
 # focus window
 bindsym $mod+h                  focus left
@@ -138,27 +132,22 @@ bindsym $mod+l                  focus right
 bindsym $mod+a                  focus parent
 bindsym $mod+o                  focus child
 
-
 # move window
 bindsym $mod+Shift+h            move left
 bindsym $mod+Shift+j            move down
 bindsym $mod+Shift+k            move up
 bindsym $mod+Shift+l            move right
 
-
 # split types
 bindsym $mod+semicolon          split h
 bindsym $mod+v                  split v
-
 
 # fullscreen window
 bindsym $mod+Shift+f            fullscreen toggle
 bindsym $mod+Shift+g            fullscreen toggle global
 
-
 # layout
 bindsym $mod+e                  layout toggle split
-
 
 # gaps
 set $gaps_default               17
@@ -166,16 +155,13 @@ gaps inner                      $gaps_default
 smart_gaps                      on
 smart_borders                   on
 
-
 # floating
 floating_modifier               $mod
 bindsym $mod+Shift+space        floating toggle
 bindsym $mod+space              focus mode_toggle
 
-
 # mouse movement focus
 focus_follows_mouse             no
-
 
 # kill window
 bindsym $mod+Shift+q            kill
@@ -195,7 +181,6 @@ bar {
     font                        $bar_font
     colors                      { background #151515FF }
 }
-
 
 # toggle bar
 bindsym $mod+d                  bar mode toggle 
@@ -257,7 +242,6 @@ bindsym $mod+g                  mode "gaps"
 
 
 # APPEARENCE ---------------------------------------------------------------------------------------
-
 # font
 font                            pango:DejaVu Sans Mono 12
 
