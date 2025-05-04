@@ -236,9 +236,16 @@ mode "gaps" {
     bindsym Escape      mode "default"
 }
 
-bindsym $mod+r                  mode "resize"
-bindsym $mod+q                  mode "apps"
-bindsym $mod+g                  mode "gaps"
+mode "mode-selection" {
+    bindsym r           mode "resize"
+    bindsym q           mode "apps"
+    bindsym g           mode "gaps"
+
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
+}
+
+bindsym $mod+q                  mode "mode-selection"
 
 
 # APPEARENCE ---------------------------------------------------------------------------------------
