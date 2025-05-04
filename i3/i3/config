@@ -6,6 +6,13 @@ set $browser                    /usr/bin/chromium
 set $i3blocks                   /usr/bin/i3blocks
 
 
+# ADMINISTRATION -----------------------------------------------------------------------------------
+bindsym $mod+Shift+r            restart
+bindsym $mod+Shift+c            reload
+bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+bindsym $mod+Control+l          exec --no-startup-id i3lock -n -c 000000
+
+
 # TERMINAL -----------------------------------------------------------------------------------------
 bindsym $mod+m                  exec urxvt
 bindsym $mod+Shift+m            exec sh ~/.config/i3/scripts/urxvtp.sh
@@ -13,13 +20,6 @@ bindsym $mod+Shift+m            exec sh ~/.config/i3/scripts/urxvtp.sh
 
 # LAUNCHER -----------------------------------------------------------------------------------------
 bindsym $mod+Shift+d            exec --no-startup-id i3-dmenu-desktop
-
-
-# ADMINISTRATION -----------------------------------------------------------------------------------
-bindsym $mod+Shift+r            restart
-bindsym $mod+Shift+c            reload
-bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
-bindsym $mod+Control+l          exec --no-startup-id i3lock -n -c 000000
 
 
 # WORKSPACES ---------------------------------------------------------------------------------------
