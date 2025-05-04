@@ -186,12 +186,6 @@ bar {
 bindsym $mod+d                  bar mode toggle 
 
 
-# VOLUME -------------------------------------------------------------------------------------------
-bindsym $mod+Shift+p            exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
-bindsym $mod+Shift+o            exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
-bindsym $mod+Shift+i            exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
-
-
 # PRINT SCREEN -------------------------------------------------------------------------------------
 bindsym Print                   exec --no-startup-id scrot
 
@@ -236,10 +230,20 @@ mode "gaps" {
     bindsym Escape      mode "default"
 }
 
+mode "volume" {
+    bindsym i           exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
+    bindsym d           exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
+    bindsym t           exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
+
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
+}
+
 mode "mode-selection" {
     bindsym r           mode "resize"
     bindsym q           mode "apps"
     bindsym g           mode "gaps"
+    bindsym v           mode "volume"
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
