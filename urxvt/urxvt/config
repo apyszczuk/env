@@ -20,7 +20,7 @@ URxvt.depth:                            32
 
 
 ! fonts
-URxvt.font:                             xft:DejaVu Sans Mono:size=11.5:style=Regular:antialias=true
+URxvt.font:                             xft:DejaVu Sans Mono:size=8.7:style=Regular:antialias=true
 URxvt.boldFont:
 URxvt.italicFont:
 URxvt.boldItalicFont:
