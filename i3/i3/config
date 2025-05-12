@@ -153,7 +153,7 @@ bindsym $mod+e                  layout toggle split
 set $gaps_default               17
 gaps inner                      $gaps_default
 smart_gaps                      on
-smart_borders                   on
+hide_edge_borders               smart
 
 # floating
 floating_modifier               $mod
