@@ -123,6 +123,7 @@ bindsym $mod+Control+Shift+0    move container to workspace number $ws20 workspa
 # WINDOWS ------------------------------------------------------------------------------------------
 # windows properties
 for_window [class=".*"]         border pixel 1
+hide_edge_borders               smart
 
 # focus window
 bindsym $mod+h                  focus left
@@ -153,7 +154,6 @@ bindsym $mod+e                  layout toggle split
 set $gaps_default               17
 gaps inner                      $gaps_default
 smart_gaps                      on
-hide_edge_borders               smart
 
 # floating
 floating_modifier               $mod
