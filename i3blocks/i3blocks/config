@@ -55,11 +55,6 @@ command=./loadavg/loadavg.sh
 interval=10
 
 
-[pacman]
-command=./pacman/pacman.sh
-interval=3600
-
-
 [volume]
 command=./volume/volume.sh
 INCREASE_BUTTON=4
