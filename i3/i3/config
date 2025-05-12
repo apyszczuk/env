@@ -182,6 +182,15 @@ bar {
     colors                      { background #151515FF }
 }
 
+bar {
+    output                      $out2
+    strip_workspace_numbers     yes
+    position                    bottom
+    tray_output                 none
+    font                        $bar_font
+    colors                      { background #151515FF }
+}
+
 # toggle bar
 bindsym $mod+d                  bar mode toggle 
 
