@@ -45,13 +45,6 @@ DISK_NAME=/dev/mapper/rhel-home
 interval=10
 
 
-[temperature]
-command=./temperature/temperature.sh
-PATH_TO_TEMPERATURE_FILES=/sys/devices/platform/coretemp.0/hwmon/hwmon1
-HIGH_LEVEL=90
-interval=1
-
-
 [uptime]
 command=./uptime/uptime.sh
 interval=60
