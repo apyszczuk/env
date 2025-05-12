@@ -3,7 +3,7 @@
 # VARIABLES ----------------------------------------------------------------------------------------
 set $mod                        Mod1
 set $browser                    /usr/bin/chromium-browser
-set $i3blocks                   /usr/bin/i3blocks
+set $i3blocks                   /mnt/redhat_nfs/arturp/.local/bin/i3blocks
 
 
 # ADMINISTRATION -----------------------------------------------------------------------------------
