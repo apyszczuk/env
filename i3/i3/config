@@ -43,8 +43,8 @@ set $ws18                       "18"
 set $ws19                       "19"
 set $ws20                       "20"
 
-set $out1                       "DisplayPort-0"
-set $out2                       "DisplayPort-0"
+set $out1                       "Virtual1"
+set $out2                       "Virtual2"
 
 # bind workspace to output
 workspace                       $ws1 output $out1
