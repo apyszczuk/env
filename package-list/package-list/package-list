@@ -33,6 +33,7 @@ inetutils
 jq
 lcov
 libreoffice-fresh
+libxml2-legacy
 linux
 linux-firmware
 make
