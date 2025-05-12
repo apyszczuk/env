@@ -150,11 +150,6 @@ bindsym $mod+Shift+g            fullscreen toggle global
 # layout
 bindsym $mod+e                  layout toggle split
 
-# gaps
-set $gaps_default               17
-gaps inner                      $gaps_default
-smart_gaps                      on
-
 # floating
 floating_modifier               $mod
 bindsym $mod+Shift+space        floating toggle
@@ -225,16 +220,6 @@ mode "apps" {
     bindsym Escape      mode "default"
 }
 
-mode "gaps" {
-    bindsym 0           exec "i3-msg gaps inner current set 0"; mode "default"
-    bindsym 9           exec "i3-msg gaps inner current set $gaps_default"; mode "default"
-    bindsym 8           exec "i3-msg gaps inner current plus 2"
-    bindsym 7           exec "i3-msg gaps inner current minus 2"
-
-    bindsym Return      mode "default"
-    bindsym Escape      mode "default"
-}
-
 mode "volume" {
     bindsym i           exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
     bindsym d           exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
@@ -254,7 +239,6 @@ mode "print-screen" {
 mode "mode-selection" {
     bindsym r           mode "resize"
     bindsym q           mode "apps"
-    bindsym g           mode "gaps"
     bindsym v           mode "volume"
     bindsym p           mode "print-screen"
 
