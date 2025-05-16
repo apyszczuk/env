@@ -191,7 +191,8 @@ bindsym $mod+d                  bar mode toggle
 
 
 # MODES --------------------------------------------------------------------------------------------
-mode "resize" {
+set $mode_resize                "resize (h,j,k,l,H,J,K,L)"
+mode $mode_resize {
     set $sz1 1
     set $sz2 10
 
@@ -209,10 +210,11 @@ mode "resize" {
     bindsym Escape      mode "default"
 }
 
-mode "apps" {
+set $mode_app                   "app (c:chromium,s:spotify,d:drive,t:translate,P:poweroff)"
+mode $mode_app {
     bindsym c           workspace $ws1; exec $browser; mode "default"
     bindsym s           workspace $ws2; exec $browser --app=http://open.spotify.com; mode "default"
-    bindsym b           exec $browser --app=http://drive.google.com; mode "default"
+    bindsym d           exec $browser --app=http://drive.google.com; mode "default"
     bindsym t           exec $browser --app=http://translate.google.com; mode "default"
     bindsym Shift+p     exec systemctl poweroff; mode "default"
 
@@ -220,7 +222,8 @@ mode "apps" {
     bindsym Escape      mode "default"
 }
 
-mode "volume" {
+set $mode_volume                "volume (i:increase,d:decrease,t:toggle)"
+mode $mode_volume {
     bindsym i           exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
     bindsym d           exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
     bindsym t           exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
@@ -229,24 +232,26 @@ mode "volume" {
     bindsym Escape      mode "default"
 }
 
-mode "print-screen" {
-    bindsym p           exec --no-startup-id scrot; mode "default"
+set $mode_screenshot            "screenshot (a:all)"
+mode $mode_screenshot {
+    bindsym a           exec --no-startup-id scrot; mode "default"
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
 }
 
-mode "mode-selection" {
-    bindsym r           mode "resize"
-    bindsym q           mode "apps"
-    bindsym v           mode "volume"
-    bindsym p           mode "print-screen"
+set $mode_menu                  "mode (r:resize,a:app,v:volume,s:screenshot)"
+mode $mode_menu {
+    bindsym r           mode $mode_resize
+    bindsym a           mode $mode_app
+    bindsym v           mode $mode_volume
+    bindsym s           mode $mode_screenshot
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
 }
 
-bindsym $mod+q                  mode "mode-selection"
+bindsym $mod+q                  mode $mode_menu
 
 
 # APPEARENCE ---------------------------------------------------------------------------------------
