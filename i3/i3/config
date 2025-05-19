@@ -239,9 +239,16 @@ mode $mode_volume {
     bindsym Escape      mode "default"
 }
 
-set $mode_screenshot            "screenshot (a:all)"
+set $mode_screenshot            "screenshot (a:all,1:out1,2:out2,w:window,W:select-window,r:region)"
 mode $mode_screenshot {
-    bindsym a           exec --no-startup-id scrot; mode "default"
+    set $screenshot     ~/.config/i3/scripts/screenshot.sh
+
+    bindsym a           exec --no-startup-id sh $screenshot; mode "default"
+    bindsym 1           exec --no-startup-id sh $screenshot monitor $out1; mode "default"
+    bindsym 2           exec --no-startup-id sh $screenshot monitor $out2; mode "default"
+    bindsym w           exec --no-startup-id sh $screenshot current-window; mode "default"
+    bindsym Shift+w     exec --no-startup-id sh $screenshot select-window; mode "default"
+    bindsym r           exec --no-startup-id sh $screenshot select-region; mode "default"
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
