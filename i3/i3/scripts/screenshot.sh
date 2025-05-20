@@ -14,8 +14,14 @@ if [ ! -v "EXT" ]; then
     EXT="png"
 fi
 
+if [ ! -v "POSTFIX" ]; then
+    POSTFIX=""
+else
+    POSTFIX="_$POSTFIX"
+fi
+
 if [ ! -v "FILE" ]; then
-    FILE="$DIR/$FN.$EXT"
+    FILE="$DIR/$FN$POSTFIX.$EXT"
 fi
 
 
@@ -37,10 +43,11 @@ function get_monitor_number()
 function main()
 {
     if [ -n "$DEBUG" ]; then
-        echo "DIR   = $DIR"
-        echo "FN    = $FN"
-        echo "EXT   = $EXT"
-        echo "FILE  = $FILE"
+        echo "DIR       = $DIR"
+        echo "FN        = $FN"
+        echo "EXT       = $EXT"
+        echo "POSTFIX   = $POSTFIX"
+        echo "FILE      = $FILE"
     fi
 
     case "$1" in
