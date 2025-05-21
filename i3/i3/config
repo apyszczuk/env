@@ -231,9 +231,9 @@ mode $mode_gap {
 
 set $mode_volume                "volume (i:increase,d:decrease,t:toggle)"
 mode $mode_volume {
-    bindsym i           exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
-    bindsym d           exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
-    bindsym t           exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
+    bindsym i           exec --no-startup-id sh ~/.config/i3/scripts/volume.sh increase 3
+    bindsym d           exec --no-startup-id sh ~/.config/i3/scripts/volume.sh decrease 3
+    bindsym t           exec --no-startup-id sh ~/.config/i3/scripts/volume.sh toggle
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
