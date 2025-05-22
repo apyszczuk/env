@@ -224,20 +224,50 @@ mode $mode_app {
 
 set $mode_volume                "volume (i:increase,d:decrease,t:toggle)"
 mode $mode_volume {
-    bindsym i           exec --no-startup-id sh ~/.config/i3/scripts/volume_increase.sh 3
-    bindsym d           exec --no-startup-id sh ~/.config/i3/scripts/volume_decrease.sh 3
-    bindsym t           exec --no-startup-id sh ~/.config/i3/scripts/volume_toggle.sh
+    bindsym i           exec --no-startup-id sh ~/.config/i3/scripts/volume.sh increase 3
+    bindsym d           exec --no-startup-id sh ~/.config/i3/scripts/volume.sh decrease 3
+    bindsym t           exec --no-startup-id sh ~/.config/i3/scripts/volume.sh toggle
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
 }
 
-set $mode_screenshot            "screenshot (a:all)"
+set $mode_screenshot            "screenshot (a:all,1:out1,2:out2,w:window,W:select-window,r:region)"
 mode $mode_screenshot {
-    bindsym a           exec --no-startup-id scrot; mode "default"
+    set $ms_screenshot              ~/.config/i3/scripts/screenshot.sh
 
-    bindsym Return      mode "default"
-    bindsym Escape      mode "default"
+    bindsym a                       exec --no-startup-id                            \
+                                    POSTFIX="all"                                   \
+                                    sh $ms_screenshot;                              \
+                                    mode "default"
+
+    bindsym 1                       exec --no-startup-id                            \
+                                    POSTFIX="$out1"                                 \
+                                    sh $ms_screenshot monitor $out1;                \
+                                    mode "default"
+
+    bindsym 2                       exec --no-startup-id                            \
+                                    POSTFIX="$out2"                                 \
+                                    sh $ms_screenshot monitor $out2;                \
+                                    mode "default"
+
+    bindsym w                       exec --no-startup-id                            \
+                                    POSTFIX="window"                                \
+                                    sh $ms_screenshot current-window;               \
+                                    mode "default"
+
+    bindsym --release Shift+w       exec --no-startup-id                            \
+                                    POSTFIX="window"                                \
+                                    sh $ms_screenshot select-window;                \
+                                    mode "default"
+
+    bindsym --release r             exec --no-startup-id                            \
+                                    POSTFIX="region"                                \
+                                    sh $ms_screenshot select-region;                \
+                                    mode "default"
+
+    bindsym Return                  mode "default"
+    bindsym Escape                  mode "default"
 }
 
 set $mode_menu                  "mode (r:resize,a:app,v:volume,s:screenshot)"
