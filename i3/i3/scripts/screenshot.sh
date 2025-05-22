@@ -67,6 +67,10 @@ function main()
             "$SCROT" -F "$FILE"
             ;;
     esac
+
+    if [ -n "$SYMLINK" ]; then
+        ln -sf "$FILE" "$SYMLINK.$EXT"
+    fi
 }
 
 main "$@"

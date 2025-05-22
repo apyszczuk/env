@@ -243,40 +243,47 @@ set $mode_screenshot            "screenshot (a:all,1:out1,2:out2,w:window,W:sele
 mode $mode_screenshot {
     set $ms_screenshot              ~/.config/i3/scripts/screenshot.sh
     set $ms_dir                     ~/screenshots
+    set $ms_symlink                 ~/screenshots/last
 
     bindsym a                       exec --no-startup-id                            \
                                     DIR=$ms_dir                                     \
                                     POSTFIX="all"                                   \
+                                    SYMLINK=$ms_symlink                             \
                                     sh $ms_screenshot;                              \
                                     mode "default"
 
     bindsym 1                       exec --no-startup-id                            \
                                     DIR=$ms_dir                                     \
                                     POSTFIX="$out1"                                 \
+                                    SYMLINK=$ms_symlink                             \
                                     sh $ms_screenshot monitor $out1;                \
                                     mode "default"
 
     bindsym 2                       exec --no-startup-id                            \
                                     DIR=$ms_dir                                     \
                                     POSTFIX="$out2"                                 \
+                                    SYMLINK=$ms_symlink                             \
                                     sh $ms_screenshot monitor $out2;                \
                                     mode "default"
 
     bindsym w                       exec --no-startup-id                            \
                                     DIR=$ms_dir                                     \
                                     POSTFIX="window"                                \
+                                    SYMLINK=$ms_symlink                             \
                                     sh $ms_screenshot current-window;               \
                                     mode "default"
 
     bindsym --release Shift+w       exec --no-startup-id                            \
                                     DIR=$ms_dir                                     \
                                     POSTFIX="window"                                \
+                                    SYMLINK=$ms_symlink                             \
                                     sh $ms_screenshot select-window;                \
                                     mode "default"
 
     bindsym --release r             exec --no-startup-id                            \
                                     DIR=$ms_dir                                     \
                                     POSTFIX="region"                                \
+                                    SYMLINK=$ms_symlink                             \
                                     sh $ms_screenshot select-region;                \
                                     mode "default"
 
