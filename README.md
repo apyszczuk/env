@@ -1,9 +1,9 @@
 # env: My Environment
 
-## What is inside?
+## WHAT IS INSIDE
 
 
-## How to install?
+## HOW TO INSTALL
 
 Open your terminal and change directory to your favourite location where you
 want to store environment configuration and do the following:
