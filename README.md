@@ -18,8 +18,8 @@ specific location (where concrete application will be searching for) to source
 directory or configuration file from this repository.
 
 You need to know that this is MY environment configuration, so not everything
-here will be suited for you. Git configuration or package-list are good
-examples for that.
+here will be suited for you, `git` or `package-list` are good examples for
+that.
 
 ## Screenshot
 
