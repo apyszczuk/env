@@ -36,4 +36,4 @@ fi
 #setxkbmap -option caps:escape
 ~/.fehbg &
 picom &
-exec /usr/bin/i3
+exec i3
