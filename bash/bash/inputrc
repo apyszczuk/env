@@ -1,0 +1,20 @@
+# OPTIONS --------------------------------------------------------------------------------
+
+set colored-stats                               on
+set colored-completion-prefix                   on
+set completion-ignore-case                      on
+set menu-complete-display-prefix                on
+set show-all-if-ambiguous                       on
+set show-all-if-unmodified                      on
+set mark-symlinked-directories                  on
+set bind-tty-special-chars                      off
+
+
+# MAPPINGS -------------------------------------------------------------------------------
+
+TAB:                                            menu-complete
+"\e[Z":                                         menu-complete-backward
+"\C-w":                                         backward-kill-word
+
+
+# vim:cc=90
