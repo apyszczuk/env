@@ -34,6 +34,4 @@ fi
 
 # mapped directly on keyboard (VIA)
 #setxkbmap -option caps:escape
-~/.fehbg &
-picom &
 exec i3

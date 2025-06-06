@@ -6,6 +6,11 @@ set $browser                    /usr/bin/chromium
 set $i3blocks                   /usr/bin/i3blocks
 
 
+# AUTOSTART ----------------------------------------------------------------------------------------
+exec --no-startup-id            sh ~/.fehbg
+exec --no-startup-id            picom -b
+
+
 # ADMINISTRATION -----------------------------------------------------------------------------------
 bindsym $mod+Shift+r            restart
 bindsym $mod+Shift+c            reload
