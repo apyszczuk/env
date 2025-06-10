@@ -30,7 +30,7 @@ $ sh install.sh
 
 There is top level `env/install.sh` file that has logic of installing module.
 It checks if target file exists and is either symbolic link, regular file or
-directory.  Symbolic link is removed and new one is created, for latter two
+directory.  Symbolic link is removed and new one is created. For latter two
 error is produced.
 
 ## Screenshot
