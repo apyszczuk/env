@@ -1,7 +1,16 @@
-# env: My Environment
+# env: My Environment Configuration
 
 ## What is inside
 
+You can find here my configuration of applications that I use everyday.  Every
+directory is responsible for configuring some application. You can install them
+separately of course.
+
+Since it is my environment configuration, not everything here will be suited
+for you as it is, `git` or `package-list` are good examples of that. So, if you
+want to try it make sure you have backup of your configuration and maybe read
+configuration of that module first - it is always good to know what you can
+expect.
 
 ## How to install
 
@@ -16,10 +25,6 @@ In every directory inside `env` you will see `install.sh` script that does the
 installation. Installation in most cases is just simply making symbolic link in
 a specific location (where appropriate application will be searching for) to
 configuration source directory or file from this repository.
-
-You need to know that this is MY environment configuration, so not everything
-here will be suited for you, `git` or `package-list` are good examples for
-that.
 
 To install any of the module, go to the directory and do as follows:
 
