@@ -6,6 +6,11 @@ set $browser                    /usr/bin/chromium-browser
 set $i3blocks                   /mnt/redhat_nfs/arturp/.local/bin/i3blocks
 
 
+# AUTOSTART ----------------------------------------------------------------------------------------
+exec --no-startup-id            sh ~/.fehbg
+exec --no-startup-id            picom -b
+
+
 # ADMINISTRATION -----------------------------------------------------------------------------------
 bindsym $mod+Shift+r            restart
 bindsym $mod+Shift+c            reload
