@@ -38,6 +38,13 @@ It checks if target file exists and is either symbolic link, regular file or
 directory.  Symbolic link is removed and new one is created. For latter two
 error is produced.
 
+## Modules
+
+So far there is only one external module that is stored in this repository
+and it is Vim configuration, but it is also mine. Configuration of Vim uses
+external modules (plugins), only some of them are mine.
+
+
 ## Screenshot
 
 ## License
