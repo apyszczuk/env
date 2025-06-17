@@ -118,7 +118,7 @@ Current terminal emulator.
 
 - `vim`
 
-My Vim configuration that is still under development but I am pretty happy
+My **Vim** configuration that is still under development but I am pretty happy
 with that.
 
 - `xinitrc`
