@@ -86,3 +86,45 @@ am going to say that once you try it, you will never go back.
 
 The status line on the bottom with some system information is controlled by
 i3blocks application.
+
+- `bash`
+
+It is my default shell. I have written some fancy stuff for it with no
+external dependencies. Additionally there is configuration for colors and
+readline.
+
+- `git`
+
+Just basic configuration of git.
+
+- `package-list`
+
+List of packages installed on my system. With hook for updating list when
+application is installed or removed.
+
+- `picom`
+
+Used basically for making windows transparent and that is it.
+
+
+- `termite`
+
+Old and not used terminal emulator left as backup to primary terminal emulator
+is something happens.
+
+- `urxvt`
+
+Current terminal emulator.
+
+- `vim`
+
+My Vim configuration that is still under development but I am pretty happy
+with that.
+
+- `xinitrc`
+
+Initialize X server resources and start i3 window manager.
+
+- `xresources`
+
+Resource file that includes other resource files.
