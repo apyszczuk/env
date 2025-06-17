@@ -104,8 +104,7 @@ is installed or removed.
 
 - `picom`
 
-Used basically for making windows transparent with a slight shadow and that is
-it.
+Used basically for making windows transparent with a slight shadow.
 
 
 - `termite`
