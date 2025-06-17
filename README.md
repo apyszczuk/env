@@ -109,8 +109,8 @@ Used basically for making windows transparent and that is it.
 
 - `termite`
 
-Old and not used terminal emulator left as backup to primary terminal emulator
-is something happens.
+Old and not used terminal emulator, left as backup to primary terminal
+emulator if something happens.
 
 - `urxvt`
 
