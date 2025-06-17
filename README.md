@@ -127,4 +127,4 @@ Initialize X server resources and start i3 window manager.
 
 - `xresources`
 
-Resource file that includes other resource files.
+    Resource file that includes other resource files.
