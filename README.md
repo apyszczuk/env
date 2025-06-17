@@ -83,12 +83,12 @@ And now you can see how it looks like.
     to use it, but I am going to say that once you try it, you will never go
     back.
 
-- `i3blocks`
+* `i3blocks`
 
     The status line on the bottom with some system information is controlled
     by **i3blocks** application.
 
-- `bash`
++ `bash`
 
     It is my default shell. I have written some fancy functionalities for it
     with no external dependencies. Additionally there is configuration for
