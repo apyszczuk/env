@@ -1,6 +1,6 @@
 # env: Linux Environment Configuration
 
-## General note 
+## General Note 
 
 You can find configuration of my whole **Linux Environment** here, meaning
 configuration of applications that I use every day whose default configuration
