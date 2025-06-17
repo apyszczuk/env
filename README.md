@@ -85,7 +85,7 @@ use it, but I am going to say that once you try it, you will never go back.
 - `i3blocks`
 
 The status line on the bottom with some system information is controlled by
-i3blocks application.
+**i3blocks** application.
 
 - `bash`
 
