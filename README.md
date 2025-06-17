@@ -78,9 +78,9 @@ And now you can see how it looks like.
 
 - `i3`
 
-As you can see I do not use any fancy Desktop Environment, instead I prefer to
-use Tiling Window Manager i3. I will not try to convince you to use it, but I
-am going to say that once you try it, you will never go back.
+As you can see I do not use any fancy **Desktop Environment**, instead I
+prefer to use **Tiling Window Manager i3**. I will not try to convince you to
+use it, but I am going to say that once you try it, you will never go back.
 
 - `i3blocks`
 
