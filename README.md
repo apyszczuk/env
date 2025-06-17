@@ -99,8 +99,8 @@ Just basic configuration of git.
 
 - `package-list`
 
-List of packages installed on my system. With hook for updating list when
-application is installed or removed.
+List of packages installed on my system that is updated every time application
+is installed or removed.
 
 - `picom`
 
