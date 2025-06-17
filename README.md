@@ -78,52 +78,52 @@ And now you can see how it looks like.
 
 - `i3`
 
-As you can see I do not use any fancy **Desktop Environment**, instead I
-prefer to use **Tiling Window Manager i3**. I will not try to convince you to
-use it, but I am going to say that once you try it, you will never go back.
+    As you can see I do not use any fancy **Desktop Environment**, instead I
+    prefer to use **Tiling Window Manager i3**. I will not try to convince you
+    to use it, but I am going to say that once you try it, you will never go
+    back.
 
 - `i3blocks`
 
-The status line on the bottom with some system information is controlled by
-**i3blocks** application.
+    The status line on the bottom with some system information is controlled
+    by **i3blocks** application.
 
 - `bash`
 
-It is my default shell. I have written some fancy functionalities for it with
-no external dependencies. Additionally there is configuration for
-**dircolors** and **readline**.
+    It is my default shell. I have written some fancy functionalities for it
+    with no external dependencies. Additionally there is configuration for
+    **dircolors** and **readline**.
 
 - `git`
 
-Just basic configuration of git.
+    Just basic configuration of git.
 
 - `package-list`
 
-List of packages installed on my system that is updated every time application
-is installed or removed.
+    List of packages installed on my system that is updated every time
+    application is installed or removed.
 
 - `picom`
 
-Used basically for making windows transparent with a slight shadow.
-
+    Used basically for making windows transparent with a slight shadow.
 
 - `termite`
 
-Old and not used terminal emulator, left as backup to primary terminal
-emulator if something happens.
+    Old and not used terminal emulator, left as backup to primary terminal
+    emulator if something happens.
 
 - `urxvt`
 
-Current terminal emulator.
+    Current terminal emulator.
 
 - `vim`
 
-My **Vim** configuration that is still under development but I am pretty happy
-with that.
+    My **Vim** configuration that is still under development but I am pretty
+    happy with that.
 
 - `xinitrc`
 
-Initialize X server resources and start i3 window manager.
+    Initialize X server resources and start i3 window manager.
 
 - `xresources`
 
