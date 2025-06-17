@@ -89,9 +89,9 @@ The status line on the bottom with some system information is controlled by
 
 - `bash`
 
-It is my default shell. I have written some fancy stuff for it with no
-external dependencies. Additionally there is configuration for colors and
-readline.
+It is my default shell. I have written some fancy functionalities for it with
+no external dependencies. Additionally there is configuration for dircolors
+and readline.
 
 - `git`
 
