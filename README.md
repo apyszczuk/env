@@ -1,5 +1,6 @@
 # env: Linux Environment Configuration
 
+
 ## Preface
 
 You can find configuration of my whole Linux Environment here, meaning
@@ -12,6 +13,7 @@ be suited for you as it is, `git` or `package-list` are good examples of that.
 So, if you want to try it, make sure you have backup of your configuration and
 maybe read configuration of that module first - it is always good to know
 beforehead what you are going to apply.
+
 
 ## How to install
 
@@ -48,6 +50,7 @@ It checks if target file exists and if it is either symbolic link, regular
 file or directory.  Symbolic link is removed and new one is created, but for
 latter two error is produced.
 
+
 ## Modules
 
 So far there is only one external module that is stored in this repository and
@@ -67,11 +70,18 @@ I try my best to minimize difference between these two branches. Everytime
 experience at work.
 
 
-## Screenshot
+## Screenshots
 
 And now you can see how it looks like.
 
-![env screenshot](/env.png)
+- Arch Linux
+
+![env1](/env1.png)
+
+
+- Red Hat Enterprise Linux 9
+
+![env2](/env2.png)
 
 
 ## What is inside
