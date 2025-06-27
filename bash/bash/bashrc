@@ -1,7 +1,7 @@
 # ALIASES --------------------------------------------------------------------------------
 
 # ls
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lh'
 alias l='ls -lah'
 
