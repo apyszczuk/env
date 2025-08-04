@@ -43,6 +43,7 @@ mc
 ncdu
 neofetch
 ntfs-3g
+otf-font-awesome
 picom
 polkit
 python
@@ -55,7 +56,6 @@ time
 tmux
 tree
 ttf-dejavu
-ttf-font-awesome
 ttf-liberation
 uncrustify
 unzip
