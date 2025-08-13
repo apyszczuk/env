@@ -180,7 +180,6 @@ let delimitMate_expand_cr           = 1
 
 
 " ---- vim-fugitive ----------------------------------------------------------------------
-nnoremap <silent> mgL               :Git log --graph --decorate<CR>
 nnoremap <silent> mgl               :Git! log --graph --decorate<CR>
 nnoremap <silent> <C-L><C-G>        :Gedit :<CR>
 nnoremap <silent> <C-L>g            :G<CR>
