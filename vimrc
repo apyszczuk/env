@@ -41,6 +41,7 @@ set laststatus=2
 set scrolloff=1
 set shortmess=filnxtToOSs
 set cmdwinheight=40
+set cursorline
 
 " indent
 set tabstop=4
