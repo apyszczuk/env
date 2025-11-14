@@ -40,3 +40,6 @@
 [submodule "pack/vim-grepl/start/vim-grepl"]
 	path = pack/vim-grepl/start/vim-grepl
 	url = https://github.com/apyszczuk/vim-grepl.git
+[submodule "pack/vim-translate-shell/start/vim-translate-shell"]
+	path = pack/vim-translate-shell/start/vim-translate-shell
+	url = https://github.com/apyszczuk/vim-translate-shell.git
