@@ -1,0 +1,45 @@
+[submodule "pack/vim-fugitive/start/vim-fugitive"]
+	path = pack/vim-fugitive/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/vim-asyncrun/start/vim-asyncrun"]
+	path = pack/vim-asyncrun/start/vim-asyncrun
+	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "pack/vim-ctrlp/start/vim-ctrlp"]
+	path = pack/vim-ctrlp/start/vim-ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "pack/vim-cool/start/vim-cool"]
+	path = pack/vim-cool/start/vim-cool
+	url = https://github.com/romainl/vim-cool.git
+[submodule "pack/vim-delimitmate/start/vim-delimitmate"]
+	path = pack/vim-delimitmate/start/vim-delimitmate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "pack/vim-nerdtree/start/vim-nerdtree"]
+	path = pack/vim-nerdtree/start/vim-nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "pack/vim-gitgutter/start/vim-gitgutter"]
+	path = pack/vim-gitgutter/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "pack/vim-nerdtree-git/start/vim-nerdtree-git"]
+	path = pack/vim-nerdtree-git/start/vim-nerdtree-git
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "pack/vim-winmover/start/vim-winmover"]
+	path = pack/vim-winmover/start/vim-winmover
+	url = https://github.com/apyszczuk/vim-winmover.git
+[submodule "pack/vim-fstline/start/vim-fstline"]
+	path = pack/vim-fstline/start/vim-fstline
+	url = https://github.com/apyszczuk/vim-fstline.git
+[submodule "pack/vim-differ/start/vim-differ"]
+	path = pack/vim-differ/start/vim-differ
+	url = https://github.com/apyszczuk/vim-differ.git
+[submodule "pack/vim-proset/start/vim-proset"]
+	path = pack/vim-proset/start/vim-proset
+	url = https://github.com/apyszczuk/vim-proset.git
+[submodule "pack/vim-tagbar/start/vim-tagbar"]
+	path = pack/vim-tagbar/start/vim-tagbar
+	url = https://github.com/preservim/tagbar.git
+[submodule "pack/vim-grepl/start/vim-grepl"]
+	path = pack/vim-grepl/start/vim-grepl
+	url = https://github.com/apyszczuk/vim-grepl.git
+[submodule "pack/vim-translate-shell/start/vim-translate-shell"]
+	path = pack/vim-translate-shell/start/vim-translate-shell
+	url = https://github.com/apyszczuk/vim-translate-shell.git
