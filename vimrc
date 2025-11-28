@@ -233,6 +233,10 @@ xnoremap <silent> mP    :<c-u>call <SID>find_selected_tag("CtrlPBufTag")<CR>
 xnoremap <silent> mp    :<c-u>call <SID>find_selected_tag("CtrlPTag")<CR>
 
 
+" ---- vim-translate-shell ---------------------------------------------------------------
+let g:translate_shell_language = ":pl"
+
+
 " ---- COLORS ----------------------------------------------------------------------------
 colorscheme gruvbox
 set background=dark
