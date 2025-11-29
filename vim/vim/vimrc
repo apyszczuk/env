@@ -100,11 +100,6 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 " it could execute multiple lines that are added to the list
 nnoremap <C-L>rc 0v$hy:<C-R>"<CR>
 
-" jumps
-nnoremap <C-]> <C-]>zz
-nnoremap <C-O> <C-O>zz
-nnoremap <C-I> <C-I>zz
-
 " command window with immediate backward search
 nnoremap q: q:<ESC>?
 nnoremap q/ q/<ESC>?
