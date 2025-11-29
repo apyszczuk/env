@@ -10,9 +10,6 @@
 [submodule "vim/vim/pack/vim-cool/start/vim-cool"]
 	path = vim/vim/pack/vim-cool/start/vim-cool
 	url = https://github.com/romainl/vim-cool.git
-[submodule "vim/vim/pack/vim-delimitmate/start/vim-delimitmate"]
-	path = vim/vim/pack/vim-delimitmate/start/vim-delimitmate
-	url = https://github.com/Raimondi/delimitMate.git
 [submodule "vim/vim/pack/vim-nerdtree/start/vim-nerdtree"]
 	path = vim/vim/pack/vim-nerdtree/start/vim-nerdtree
 	url = https://github.com/preservim/nerdtree.git
