@@ -137,6 +137,10 @@ nnoremap <silent> <C-L><C-B>    :cprev<CR>
 nnoremap <silent> m<C-L><C-F>   :cfirst<CR>
 nnoremap <silent> m<C-L><C-B>   :clast<CR>
 
+" auto close
+inoremap {<CR>  {}<Left><CR><C-O>O
+inoremap {;<CR> {};<Left><Left><CR><C-O>O
+
 
 " ---- COMMANDS --------------------------------------------------------------------------
 
