@@ -63,6 +63,7 @@ usbutils
 vmware-horizon-client
 vmware-keymaps
 wget
+xclip
 xf86-video-ati
 xf86-video-vesa
 xorg-bdftopcf
