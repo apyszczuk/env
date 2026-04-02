@@ -233,8 +233,7 @@ set background=dark
 hi Normal ctermbg=NONE ctermfg=252
 hi StatusLine ctermbg=252 ctermfg=236
 hi StatusLineNC ctermfg=234
-hi CursorLine ctermbg=234
-hi CursorLineNr ctermbg=234
+hi CursorLine ctermbg=236
 hi TablineSel cterm=none ctermbg=237 ctermfg=222
 hi TablineFill cterm=none ctermbg=235 ctermfg=252
 hi Pmenu cterm=none ctermbg=none ctermfg=222
@@ -247,8 +246,19 @@ hi DiffDelete   cterm=none ctermbg=none ctermfg=167
 hi DiffAdd      cterm=none ctermbg=none ctermfg=142
 hi DiffChange   cterm=none ctermbg=none ctermfg=108
 hi DiffText     cterm=none ctermbg=none ctermfg=123
+hi link GitGutterAdd DiffAdd
+hi link GitGutterChange DiffChange
+hi link GitGutterDelete DiffDelete
+hi link GitGutterChangeDelete DiffDelete
+hi! link SignColumn LineNr
+hi! link CursorLineNr CursorLine
 
 hi User1 ctermfg=007 ctermbg=236
 hi User2 ctermfg=007 ctermbg=236
 hi User3 ctermfg=236 ctermbg=236
 hi User4 ctermfg=239 ctermbg=236
+
+hi MatchParen ctermbg=25
+hi Visual cterm=none ctermbg=58
+hi Error cterm=none ctermbg=none ctermfg=167
+hi ErrorMsg cterm=none ctermbg=none ctermfg=167
