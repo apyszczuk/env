@@ -49,8 +49,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
-set cindent
-set cinoptions=g0
 
 " search
 set hlsearch
@@ -125,17 +123,13 @@ nnoremap <C-K> 10k
 nnoremap dD "_dd
 
 " quickfix window
-nnoremap <silent> mc            :ccl<CR>
-nnoremap <silent> <C-F>         :lnext<CR>
-nnoremap <silent> <C-B>         :lprev<CR>
-nnoremap <silent> m<C-F>        :lfirst<CR>
-nnoremap <silent> m<C-B>        :llast<CR>
+nnoremap <silent> mc        :ccl<CR>
+nnoremap <silent> mf        :lnext<CR>
+nnoremap <silent> mb        :lprev<CR>
 
 " location list
-nnoremap <silent> <C-L><C-F>    :cnext<CR>
-nnoremap <silent> <C-L><C-B>    :cprev<CR>
-nnoremap <silent> m<C-L><C-F>   :cfirst<CR>
-nnoremap <silent> m<C-L><C-B>   :clast<CR>
+nnoremap <silent> m<C-F>    :cnext<CR>
+nnoremap <silent> m<C-B>    :cprev<CR>
 
 " auto close
 inoremap {<CR>  {}<Left><CR><C-O>O
@@ -148,6 +142,10 @@ command! -nargs=1 -complete=help H :enew | :set buftype=help | :keepalt h <args>
 
 
 " ---- PLUGINS ---------------------------------------------------------------------------
+
+" ---- built-in ----------------------------------------------------------------------
+let g:ft_man_open_mode = 'vert'
+
 
 " ---- vim-nerdtree ----------------------------------------------------------------------
 let NERDTreeMinimalUI               = 1
@@ -175,12 +173,8 @@ nnoremap <silent> <C-N><C-T>        :TagbarToggle<CR>
 let g:asyncrun_open                 = 12
 
 
-" ---- vim-delimitmate -------------------------------------------------------------------
-let delimitMate_expand_cr           = 1
-
-
 " ---- vim-fugitive ----------------------------------------------------------------------
-nnoremap <silent> mgl               :Git! log --graph --decorate<CR>
+nnoremap <silent> mgl               :Git! -p log --graph --decorate<CR>
 nnoremap <silent> <C-L><C-G>        :Gedit :<CR>
 nnoremap <C-L>df                    :silent G fetch \| :G diff FETCH_HEAD HEAD<CR>
 
@@ -236,6 +230,16 @@ xnoremap <silent> mp    :<c-u>call <SID>find_selected_tag("CtrlPTag")<CR>
 let g:translate_shell_language = ":pl"
 
 
+" ---- vim-gitgutter ---------------------------------------------------------------------
+let g:gitgutter_sign_allow_clobber              = 1
+let g:gitgutter_sign_modified                   = 'M'
+let g:gitgutter_sign_added                      = 'A'
+let g:gitgutter_sign_removed                    = 'D'
+let g:gitgutter_sign_removed_first_line         = 'D1'
+let g:gitgutter_sign_removed_above_and_below    = 'D+'
+let g:gitgutter_sign_modified_removed           = 'DM'
+
+
 " ---- COLORS ----------------------------------------------------------------------------
 colorscheme gruvbox
 set background=dark
@@ -243,8 +247,7 @@ set background=dark
 hi Normal ctermbg=NONE ctermfg=252
 hi StatusLine ctermbg=252 ctermfg=236
 hi StatusLineNC ctermfg=234
-hi CursorLine ctermbg=234
-hi CursorLineNr ctermbg=234
+hi CursorLine ctermbg=236
 hi TablineSel cterm=none ctermbg=237 ctermfg=222
 hi TablineFill cterm=none ctermbg=235 ctermfg=252
 hi Pmenu cterm=none ctermbg=none ctermfg=222
@@ -257,8 +260,19 @@ hi DiffDelete   cterm=none ctermbg=none ctermfg=167
 hi DiffAdd      cterm=none ctermbg=none ctermfg=142
 hi DiffChange   cterm=none ctermbg=none ctermfg=108
 hi DiffText     cterm=none ctermbg=none ctermfg=123
+hi link GitGutterAdd DiffAdd
+hi link GitGutterChange DiffChange
+hi link GitGutterDelete DiffDelete
+hi link GitGutterChangeDelete DiffDelete
+hi! link SignColumn LineNr
+hi! link CursorLineNr CursorLine
 
 hi User1 ctermfg=007 ctermbg=236
 hi User2 ctermfg=007 ctermbg=236
 hi User3 ctermfg=236 ctermbg=236
 hi User4 ctermfg=239 ctermbg=236
+
+hi MatchParen ctermbg=25
+hi Visual cterm=none ctermbg=58
+hi Error cterm=none ctermbg=none ctermfg=167
+hi ErrorMsg cterm=none ctermbg=none ctermfg=167
