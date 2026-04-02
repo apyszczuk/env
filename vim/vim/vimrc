@@ -170,7 +170,7 @@ let g:asyncrun_open                 = 12
 
 
 " ---- vim-fugitive ----------------------------------------------------------------------
-nnoremap <silent> mgl               :Git! log --graph --decorate<CR>
+nnoremap <silent> mgl               :Git! -p log --graph --decorate<CR>
 nnoremap <silent> <C-L><C-G>        :Gedit :<CR>
 nnoremap <C-L>df                    :silent G fetch \| :G diff FETCH_HEAD HEAD<CR>
 
