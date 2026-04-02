@@ -226,6 +226,16 @@ xnoremap <silent> mp    :<c-u>call <SID>find_selected_tag("CtrlPTag")<CR>
 let g:translate_shell_language = ":pl"
 
 
+" ---- vim-gitgutter ---------------------------------------------------------------------
+let g:gitgutter_sign_allow_clobber              = 1
+let g:gitgutter_sign_modified                   = 'M'
+let g:gitgutter_sign_added                      = 'A'
+let g:gitgutter_sign_removed                    = 'D'
+let g:gitgutter_sign_removed_first_line         = 'D1'
+let g:gitgutter_sign_removed_above_and_below    = 'D+'
+let g:gitgutter_sign_modified_removed           = 'DM'
+
+
 " ---- COLORS ----------------------------------------------------------------------------
 colorscheme gruvbox
 set background=dark
