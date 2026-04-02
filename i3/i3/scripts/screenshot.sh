@@ -71,6 +71,8 @@ function main()
     if [ -n "$SYMLINK" ]; then
         ln -sf "$FILE" "$SYMLINK.$EXT"
     fi
+
+    xclip -selection clipboard -t image/png -i "$FILE"
 }
 
 main "$@"
