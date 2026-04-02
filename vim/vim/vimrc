@@ -169,10 +169,6 @@ nnoremap <silent> <C-N><C-T>        :TagbarToggle<CR>
 let g:asyncrun_open                 = 12
 
 
-" ---- vim-delimitmate -------------------------------------------------------------------
-let delimitMate_expand_cr           = 1
-
-
 " ---- vim-fugitive ----------------------------------------------------------------------
 nnoremap <silent> mgl               :Git! log --graph --decorate<CR>
 nnoremap <silent> <C-L><C-G>        :Gedit :<CR>
