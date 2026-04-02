@@ -143,6 +143,10 @@ command! -nargs=1 -complete=help H :enew | :set buftype=help | :keepalt h <args>
 
 " ---- PLUGINS ---------------------------------------------------------------------------
 
+" ---- built-in ----------------------------------------------------------------------
+let g:ft_man_open_mode = 'vert'
+
+
 " ---- vim-nerdtree ----------------------------------------------------------------------
 let NERDTreeMinimalUI               = 1
 let NERDTreeWinSize                 = 40
