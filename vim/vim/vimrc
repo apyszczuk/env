@@ -123,17 +123,13 @@ nnoremap <C-K> 10k
 nnoremap dD "_dd
 
 " quickfix window
-nnoremap <silent> mc            :ccl<CR>
-nnoremap <silent> <C-F>         :lnext<CR>
-nnoremap <silent> <C-B>         :lprev<CR>
-nnoremap <silent> m<C-F>        :lfirst<CR>
-nnoremap <silent> m<C-B>        :llast<CR>
+nnoremap <silent> mc        :ccl<CR>
+nnoremap <silent> mf        :lnext<CR>
+nnoremap <silent> mb        :lprev<CR>
 
 " location list
-nnoremap <silent> <C-L><C-F>    :cnext<CR>
-nnoremap <silent> <C-L><C-B>    :cprev<CR>
-nnoremap <silent> m<C-L><C-F>   :cfirst<CR>
-nnoremap <silent> m<C-L><C-B>   :clast<CR>
+nnoremap <silent> m<C-F>    :cnext<CR>
+nnoremap <silent> m<C-B>    :cprev<CR>
 
 " auto close
 inoremap {<CR>  {}<Left><CR><C-O>O
