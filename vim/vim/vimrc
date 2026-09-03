@@ -325,3 +325,55 @@ if v:version >= 700
     autocmd BufLeave * call s:save_window_view()
     autocmd BufEnter * call s:restore_window_view()
 endif
+
+
+" ---- TABLINE ---------------------------------------------------------------------------
+function! MyTabLabel(tabnr) abort
+    let l:bufnr = tabpagebuflist(a:tabnr)[tabpagewinnr(a:tabnr) - 1]
+
+    let l:modified = 0
+    if getbufvar(l:bufnr, '&modified')
+        let l:modified = 1
+    endif
+
+    let l:tablabel = ''
+    let l:custom_tablabel = gettabvar(a:tabnr, 'tablabel', '')
+
+    if empty(l:custom_tablabel)
+        let l:bufname = bufname(l:bufnr)
+
+        if empty(l:bufname)
+            let l:tablabel = empty(&buftype) ? 'No Name' : '<' . &buftype . '>'
+        else
+            let l:tablabel = fnamemodify(l:bufname, ':t')
+        endif
+    else
+        let l:tablabel .= l:custom_tablabel
+    endif
+
+    if l:modified
+        let l:tablabel .= '*'
+    endif
+
+    return tabpagewinnr(a:tabnr, '$') . " " . l:tablabel
+endfunction
+
+function! MyTabLine() abort
+    let l:tabline = ''
+
+    for l:num in range(1, tabpagenr('$'))
+        let l:tabline .= (l:num != tabpagenr()) ? '%#TabLine#' : '%#TabLineSel#'
+        let l:tabline .= '%' . l:num . 'T %{MyTabLabel(' . l:num . ')} '
+    endfor
+
+    let l:tabline .= '%#TabLineFill#%T%='
+    " let l:tabline .= repeat('%#TabLine#%999X[X]', l:num > 1)
+    if ProsetIsProject()
+        let l:tabline .= "%#TabLine#"
+        \ . "(" . ProsetGetProjectName() . ":" . ProsetGetSettingsName() . ")"
+    endif
+
+    return l:tabline
+endfunction
+
+
