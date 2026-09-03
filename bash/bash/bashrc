@@ -26,6 +26,10 @@ alias gd='git diff'
 alias gds='git diff --staged'
 
 
+# MAN PAGER ------------------------------------------------------------------------------
+export MANPAGER="vim +MANPAGER --not-a-term -"
+
+
 # DIR COLORS -----------------------------------------------------------------------------
 
 if [[ $PS1 && -f ~/.dircolors ]]; then
