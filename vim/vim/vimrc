@@ -141,6 +141,8 @@ nnoremap <silent> ]A    :llast<CR>
 inoremap {<CR>  {}<Left><CR><C-O>O
 inoremap {;<CR> {};<Left><Left><CR><C-O>O
 
+" tags
+nnoremap m<C-I> :tag<CR>
 
 " ---- COMMANDS --------------------------------------------------------------------------
 
