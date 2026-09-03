@@ -299,3 +299,29 @@ hi MatchParen ctermbg=25
 hi Visual cterm=none ctermbg=58
 hi Error cterm=none ctermbg=none ctermfg=167
 hi ErrorMsg cterm=none ctermbg=none ctermfg=167
+
+
+" ---- WINDOW VIEW -----------------------------------------------------------------------
+function! s:save_window_view()
+    if !exists("w:buffer_view")
+        let w:buffer_view = {}
+    endif
+    let w:buffer_view[bufnr("%")] = winsaveview()
+endfunction
+
+function! s:restore_window_view()
+    let buf = bufnr("%")
+    if exists("w:buffer_view") && has_key(w:buffer_view, buf)
+        let v = winsaveview()
+        let is_file_begin = v.lnum == 1 && v.col == 0
+        if is_file_begin && !&diff
+            call winrestview(w:buffer_view[buf])
+        endif
+        unlet w:buffer_view[buf]
+    endif
+endfunction
+
+if v:version >= 700
+    autocmd BufLeave * call s:save_window_view()
+    autocmd BufEnter * call s:restore_window_view()
+endif
