@@ -1418,15 +1418,13 @@ endfunction
 
 
 hi Normal ctermbg=NONE ctermfg=252
-hi StatusLine ctermbg=252 ctermfg=236
-hi StatusLineNC ctermfg=234
-hi CursorLine ctermbg=235
-" hi TablineSel cterm=none ctermbg=237 ctermfg=222
-" hi TablineFill cterm=none ctermbg=235 ctermfg=252
+hi StatusLine ctermbg=232 ctermfg=252 cterm=none
+hi StatusLineNC ctermbg=232 ctermfg=246 cterm=none
+hi CursorLine ctermbg=234
 
-hi TablineSel cterm=none ctermfg=253 ctermbg=236
-hi TablineFill cterm=none ctermfg=195 ctermbg=234
-hi Tabline cterm=none ctermfg=250 ctermbg=234
+hi TabLine ctermfg=15 ctermbg=232 cterm=none
+hi TabLineFill ctermfg=252 ctermbg=232 cterm=none
+hi TabLineSel ctermfg=186 ctermbg=232 cterm=none
 
 hi Pmenu cterm=none ctermbg=none ctermfg=222
 hi PmenuSel cterm=none ctermbg=234 ctermfg=220
