@@ -49,7 +49,7 @@ fi
 # do not save line if it starts with a space
 # do not save duplicate lines (session history has one copy of it)
 export HISTCONTROL=ignorespace:erasedups
-export HISTSIZE=1000
+export HISTSIZE=50000
 
 # clear history duplicates leaving only the latests
 function _clear_history_duplicates()
