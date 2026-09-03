@@ -267,42 +267,6 @@ let g:gitgutter_sign_modified_removed           = 'DM'
 colorscheme gruvbox
 set background=dark
 
-hi Normal ctermbg=NONE ctermfg=252
-hi StatusLine ctermbg=232 ctermfg=252 cterm=none
-hi StatusLineNC ctermbg=232 ctermfg=246 cterm=none
-hi CursorLine ctermbg=234
-
-hi TabLine ctermfg=15 ctermbg=232 cterm=none
-hi TabLineFill ctermfg=252 ctermbg=232 cterm=none
-hi TabLineSel ctermfg=186 ctermbg=232 cterm=none
-
-hi Pmenu cterm=none ctermbg=none ctermfg=222
-hi PmenuSel cterm=none ctermbg=234 ctermfg=220
-
-hi! link StatusLineTerm StatusLine
-hi! link StatusLineTermNC StatusLineNC
-
-hi DiffDelete   cterm=none ctermbg=none ctermfg=167
-hi DiffAdd      cterm=none ctermbg=none ctermfg=142
-hi DiffChange   cterm=none ctermbg=none ctermfg=108
-hi DiffText     cterm=none ctermbg=none ctermfg=123
-hi link GitGutterAdd DiffAdd
-hi link GitGutterChange DiffChange
-hi link GitGutterDelete DiffDelete
-hi link GitGutterChangeDelete DiffDelete
-hi! link SignColumn LineNr
-hi! link CursorLineNr CursorLine
-
-hi User1 ctermfg=007 ctermbg=236
-hi User2 ctermfg=007 ctermbg=236
-hi User3 ctermfg=236 ctermbg=236
-hi User4 ctermfg=239 ctermbg=236
-
-hi MatchParen ctermbg=25
-hi Visual cterm=none ctermbg=58
-hi Error cterm=none ctermbg=none ctermfg=167
-hi ErrorMsg cterm=none ctermbg=none ctermfg=167
-
 
 " ---- WINDOW VIEW -----------------------------------------------------------------------
 function! s:save_window_view()
