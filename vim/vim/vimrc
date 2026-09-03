@@ -377,3 +377,50 @@ function! MyTabLine() abort
 endfunction
 
 
+" ---- TAB RENAME ------------------------------------------------------------------------
+function! TabRename(tablabel) abort
+    let t:tablabel = a:tablabel
+    execute 'redrawtabline'
+endfunction
+
+function! TabRename(tabnr, tablabel) abort
+    call settabvar(a:tabnr, 'tablabel', a:tablabel)
+    execute 'redrawtabline'
+endfunction
+
+function! s:rename_fugitive_tabname()
+    let l:cmd_name      = "basename $(git rev-parse --show-toplevel)"
+    let l:cmd_branch    = "git branch --show-current"
+    let l:cmd_head      = "git rev-parse --short HEAD"
+
+    let l:name_list     = systemlist(l:cmd_name)
+    let l:branch_list   = systemlist(l:cmd_branch)
+
+    let l:name = "N/A"
+    let l:branch = "N/A"
+
+    if !empty(l:name_list)
+        let l:name = l:name_list[0]
+    endif
+
+    if !empty(l:branch_list)
+        let l:branch = l:branch_list[0]
+    else
+        let l:head = systemlist(l:cmd_head)
+        if !empty(l:head)
+            let l:branch = l:head[0]
+        endif
+    endif
+
+    call TabRename(1, "(" . l:name . ":" . l:branch . ")")
+endfunction
+
+if exists('+showtabline')
+    command! -nargs=+ TabRename call TabRename(<f-args>)
+  
+    set tabline=%!MyTabLine()
+    augroup fugitive_tabname
+        autocmd!
+        autocmd User FugitiveChanged,FugitiveIndex :call <SID>rename_fugitive_tabname()
+    augroup END
+endif
