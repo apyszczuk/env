@@ -163,7 +163,20 @@ let NERDTreeWinSize                 = 40
 let NERDTreeCascadeSingleChildDir   = 0
 let NERDTreeMapMenu                 = 'M'
 
-nnoremap <silent> <C-L><C-N>        :NERDTreeToggle \| :horizontal wincmd =<CR>
+function! s:toggle_nerdtree()
+    if !exists('g:NERDTree')
+        return
+    endif
+
+    if g:NERDTree.IsOpen()
+        :NERDTreeClose
+    else
+        :NERDTreeFind | :horizontal wincmd =
+    endif
+endfunction
+
+" nnoremap <silent> <C-L><C-N>        :NERDTreeToggle \| :horizontal wincmd =<CR>
+nnoremap <silent> <C-L><C-N>        :call <SID>toggle_nerdtree()<CR>
 nnoremap <silent> <C-L>nf           :NERDTreeFind<CR>
 
 autocmd BufEnter * if winnr('$') == 1
