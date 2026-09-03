@@ -197,15 +197,15 @@ mode $mode_resize {
     set $sz1 1
     set $sz2 10
 
-    bindsym h           resize shrink width $sz1 px or $sz1 ppt
-    bindsym j           resize grow height $sz1 px or $sz1 ppt
-    bindsym k           resize shrink height $sz1 px or $sz1 ppt
-    bindsym l           resize grow width $sz1 px or $sz1 ppt
+    bindsym h           resize grow width $sz1 px or $sz1 ppt
+    bindsym j           resize shrink height $sz1 px or $sz1 ppt
+    bindsym k           resize grow height $sz1 px or $sz1 ppt
+    bindsym l           resize shrink width $sz1 px or $sz1 ppt
 
-    bindsym Shift+h     resize shrink width $sz2 px or $sz2 ppt
-    bindsym Shift+j     resize grow height $sz2 px or $sz2 ppt
-    bindsym Shift+k     resize shrink height $sz2 px or $sz2 ppt
-    bindsym Shift+l     resize grow width $sz2 px or $sz2 ppt
+    bindsym Shift+h     resize grow width $sz2 px or $sz2 ppt
+    bindsym Shift+j     resize shrink height $sz2 px or $sz2 ppt
+    bindsym Shift+k     resize grow height $sz2 px or $sz2 ppt
+    bindsym Shift+l     resize shrink width $sz2 px or $sz2 ppt
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
