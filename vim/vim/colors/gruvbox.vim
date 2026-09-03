@@ -1415,4 +1415,45 @@ endfunction
 
 " }}}
 
+
+
+hi Normal ctermbg=NONE ctermfg=252
+hi StatusLine ctermbg=252 ctermfg=236
+hi StatusLineNC ctermfg=234
+hi CursorLine ctermbg=235
+" hi TablineSel cterm=none ctermbg=237 ctermfg=222
+" hi TablineFill cterm=none ctermbg=235 ctermfg=252
+
+hi TablineSel cterm=none ctermfg=253 ctermbg=236
+hi TablineFill cterm=none ctermfg=195 ctermbg=234
+hi Tabline cterm=none ctermfg=250 ctermbg=234
+
+hi Pmenu cterm=none ctermbg=none ctermfg=222
+hi PmenuSel cterm=none ctermbg=234 ctermfg=220
+
+hi! link StatusLineTerm StatusLine
+hi! link StatusLineTermNC StatusLineNC
+
+hi DiffDelete   cterm=none ctermbg=none ctermfg=167
+hi DiffAdd      cterm=none ctermbg=none ctermfg=142
+hi DiffChange   cterm=none ctermbg=none ctermfg=108
+hi DiffText     cterm=none ctermbg=none ctermfg=123
+hi link GitGutterAdd DiffAdd
+hi link GitGutterChange DiffChange
+hi link GitGutterDelete DiffDelete
+hi link GitGutterChangeDelete DiffDelete
+hi! link SignColumn LineNr
+hi! link CursorLineNr CursorLine
+
+hi User1 ctermfg=007 ctermbg=236
+hi User2 ctermfg=007 ctermbg=236
+hi User3 ctermfg=236 ctermbg=236
+hi User4 ctermfg=239 ctermbg=236
+
+hi MatchParen ctermbg=25
+hi Visual cterm=none ctermbg=58
+hi Error cterm=none ctermbg=none ctermfg=167
+hi ErrorMsg cterm=none ctermbg=none ctermfg=167
+
+
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
