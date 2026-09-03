@@ -147,6 +147,8 @@ nnoremap m<C-I> :tag<CR>
 " ---- COMMANDS --------------------------------------------------------------------------
 
 command! -nargs=1 -complete=help H :enew | :set buftype=help | :keepalt h <args>
+command! -nargs=1 Find vimgrep "\%^" <args> | :copen
+command! -nargs=1 LFind lvimgrep "\%^" <args> | :lopen
 
 
 " ---- PLUGINS ---------------------------------------------------------------------------
