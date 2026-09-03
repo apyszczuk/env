@@ -64,6 +64,7 @@ vmware-horizon-client
 vmware-keymaps
 wget
 xclip
+xdotool
 xf86-video-ati
 xf86-video-vesa
 xorg-bdftopcf
